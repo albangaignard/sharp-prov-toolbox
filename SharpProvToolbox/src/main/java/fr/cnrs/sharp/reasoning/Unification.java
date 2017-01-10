@@ -11,14 +11,12 @@ import java.util.List;
 import java.util.Set;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.jena.graph.Node;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
-import org.apache.jena.rdf.model.InfModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.RDFNode;
@@ -27,7 +25,6 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.SimpleSelector;
 import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.shared.Lock;
 import org.apache.log4j.Logger;
 
 /**
@@ -64,16 +61,6 @@ public class Unification {
     public static List<Pair<RDFNode, RDFNode>> selectSubstitutions(Model m) {
         // UNIFICATION : 1. finding substitution of existential variables 
         String querySubstitutionFinding = "SELECT distinct ?blank_node ?node  WHERE { \n"
-                + "   ?i ?p ?blank_node .\n"
-                + "   FILTER (isBlank(?blank_node)) .\n"
-                + "   ?blank_node ?q ?j .\n"
-                + "   \n"
-                + "   ?i ?p ?node .\n"
-                + "   FILTER (?node != ?blank_node) .\n"
-                + "   ?node ?q ?j \n"
-                + "}";
-
-        String querySubstitutionFinding2 = "SELECT distinct ?blank_node ?node  WHERE { \n"
                 + "    { \n"
                 + "        ?i ?p ?blank_node .\n"
                 + "        FILTER (isBlank(?blank_node)) .\n"
@@ -89,8 +76,7 @@ public class Unification {
                 + "    }\n"
                 + "}";
 
-//        Query query = QueryFactory.create(querySubstitutionFinding);
-        Query query = QueryFactory.create(querySubstitutionFinding2);
+        Query query = QueryFactory.create(querySubstitutionFinding);
         QueryExecution qexec = QueryExecutionFactory.create(query, m);
         ResultSet results = qexec.execSelect();
 
