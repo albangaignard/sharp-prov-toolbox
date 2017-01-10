@@ -47,6 +47,7 @@ import org.apache.jena.util.FileManager;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -83,26 +84,25 @@ public class ProvStoreExpeTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    @Ignore
-    public void hello() throws URISyntaxException {
+    public void helloProvStore() throws URISyntaxException {
         ClientConfig config = new DefaultClientConfig();
         Client client = Client.create(config);
         config.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
         WebResource service = client.resource(new URI("http://provenance.ecs.soton.ac.uk/store"));
 
-        ClientResponse responseHist = service.path("/api/v0/documents").queryParam("limit", "1").queryParam("created_at__range", "2016-01-01,2016-12-01").accept("application/json").type("application/json").get(ClientResponse.class);
+        ClientResponse responseHist = service.path("/api/v0/documents").queryParam("limit", "10").queryParam("created_at__range", "2016-01-01,2016-12-01").accept("application/json").type("application/json").get(ClientResponse.class);
         String rH = responseHist.getEntity(String.class);
 
         JsonArray arrayDocs = new JsonParser().parse(rH).getAsJsonObject().get("objects").getAsJsonArray();
         for (JsonElement eH : arrayDocs) {
             String id = eH.getAsJsonObject().get("id").getAsString();
             System.out.println(id);
-
         }
-
+        Assert.assertEquals(10, arrayDocs.size());
     }
 
     @Test
+    @Ignore
     public void wildProvExpe() throws IOException {
         String prefix = "/Users/gaignard-a/Documents/Publis/eswc-2017/provenance-reasoning-mine/experiments/sample-prov-store-docs";
 
