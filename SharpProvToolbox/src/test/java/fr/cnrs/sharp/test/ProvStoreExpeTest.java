@@ -128,66 +128,6 @@ public class ProvStoreExpeTest {
         System.out.println(ResultSetFormatter.asText(results));
     }
 
-    public void harmonizeProvNoLog(Path inputProv) throws IOException {
-
-        StopWatch sw1 = new StopWatch();
-        sw1.start();
-
-        Model data = FileManager.get().loadModel(inputProv.toString());
-
-        /// STEP 1 : OWL sameAs inferences
-        Model schema = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(schema, "file:///Users/gaignard-a/Documents/Publis/eswc-2017/provenance-reasoning-mine/experiments/provo.ttl", Lang.TURTLE);
-        Reasoner owlReasoner = ReasonerRegistry.getOWLMiniReasoner();
-        owlReasoner = owlReasoner.bindSchema(schema);
-        InfModel owlModel = ModelFactory.createInfModel(owlReasoner, data);
-//        System.out.println(sw1.getTime() + " ms");
-//        logger.info("OWL entail : Graph size / BNodes : " + owlModel.size() + "/" + Unification.countBN(owlModel));
-//        dumpPredStats(owlModel);
-
-        /// STEP 2.1 : PROV inferences TGD == saturation
-        List rules = Rule.rulesFromURL("provRules_all.jena");
-        GenericRuleReasoner reasoner = new GenericRuleReasoner(rules);
-//        reasoner.setOWLTranslation(true);
-//        reasoner.setTransitiveClosureCaching(true);        
-        InfModel inferredModel = ModelFactory.createInfModel(reasoner, owlModel);
-//        System.out.println(sw2.getTime() + " ms");
-
-        /// STEP 2.2 : PROV inferences EGD == unification
-        Model m2 = ModelFactory.createDefaultModel().add(inferredModel);
-//        Path pathInfProvTGD = Files.createTempFile("PROV-inf-tgd-", ".ttl");
-//        m2.write(new FileWriter(pathInfProvTGD.toFile()), "TTL");
-//        System.out.println("PROV inferences file written to " + pathInfProvTGD.toString());
-//        logger.info("TGD : Graph size / BNodes with saturated PROV graph: " + m2.size() + "/" + Unification.countBN(m2));
-//        dumpPredStats(m2);
-
-//        StopWatch sw3 = new StopWatch();
-//        sw3.start();
-        int nbSubstitution = 1;
-        while (nbSubstitution > 0) {
-            // UNIFICATION : 1. finding substitution of existential variables 
-            List<Pair<RDFNode, RDFNode>> toBeMerged = Unification.selectSubstitutions(m2);
-            nbSubstitution = toBeMerged.size();
-//                logger.info("Found substitutions: " + nbSubstitution);
-            if (toBeMerged.size() > 0) {
-                // UNIFICATION : 2. effectively replacing blank nodes by matching nodes
-                for (Pair<RDFNode, RDFNode> p : toBeMerged) {
-//            logger.debug("Substituting " + p.getLeft().toString() + " with " + p.getRight().toString());
-                    Unification.mergeNodes(p.getLeft(), p.getRight().asResource());
-                }
-                nbSubstitution = Unification.selectSubstitutions(m2).size();
-//                    logger.info(nbSubstitution + " found after merging");
-            }
-        }
-        System.out.println(sw1.getTime() + " ms");
-//        logger.info("Unification done");
-//        logger.info("EGD : Graph size / BNodes with unified PROV inferences: " + m2.size() + "/" + Unification.countBN(m2));
-//        Path pathInfProv = Files.createTempFile("PROV-inf-tgd-egd-", ".ttl");
-//        m2.write(new FileWriter(pathInfProv.toFile()), "TTL");
-//        System.out.println("PROV inferences file written to " + pathInfProv.toString());
-//        dumpPredStats(m2);
-    }
-
     public void harmonizeProv(Path inputProv) throws IOException {
 
         Model data = FileManager.get().loadModel(inputProv.toString());
