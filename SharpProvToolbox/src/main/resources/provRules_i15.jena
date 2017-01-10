@@ -1,0 +1,13 @@
+@prefix prov: <http://www.w3.org/ns/prov#>
+
+#### Generation/Usage inference rules
+[I15_1: ( ?x prov:wasGeneratedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_2: ( ?x prov:used ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_3: ( ?x prov:wasInformedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_4: ( ?x prov:wasStartedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_5: ( ?x prov:wasEndedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_6: ( ?x prov:wasInvalidatedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_7: ( ?x prov:wasDerivedFrom ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_8: ( ?x prov:wasAttributedTo ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_9: ( ?x prov:wasAssociatedWith ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_10: ( ?x prov:wasGeneratedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]

@@ -1,0 +1,51 @@
+@prefix prov: <http://www.w3.org/ns/prov#>
+
+#### Entity inference rules
+[I7: (?e rdf:type prov:Entity), makeTemp(?a1), makeTemp(?a2)  -> (?e prov:wasGeneratedBy ?a1), (?e prov:wasInvalidatedBy ?a2)]
+
+#### Activity inference rules
+[I8: (?x rdf:type prov:Activity), makeTemp(?e1), makeTemp(?e2) -> (?x prov:wasStartedBy ?e1), (?x prov:wasEndedBy ?e2)]
+
+#### Generation/Usage inference rules
+[I6: (?a2 prov:used ?e), (?e prov:wasGeneratedBy ?a1) -> (?a2 prov:wasInformedBy ?a1)]
+
+[I15_1: ( ?x prov:wasGeneratedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_2: ( ?x prov:used ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_3: ( ?x prov:wasInformedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_4: ( ?x prov:wasStartedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_5: ( ?x prov:wasEndedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_6: ( ?x prov:wasInvalidatedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_7: ( ?x prov:wasDerivedFrom ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_8: ( ?x prov:wasAttributedTo ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_9: ( ?x prov:wasAssociatedWith ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+[I15_10: ( ?x prov:wasGeneratedBy ?y ) -> ( ?x prov:wasInfluencedBy ?y )]
+
+#### Communication inference rules
+[I5: ( ?act2 prov:wasInformedBy ?act1), makeTemp(?e) -> (?e prov:wasGeneratedBy ?act1), (?act2 prov:used ?e)]
+
+#### Time inference rules
+[I9: (?act prov:wasStartedBy ?e) -> (?e prov:wasGeneratedBy ?act)]
+[I10: (?act prov:wasEndedBy ?e) -> (?act prov:used ?e)]
+
+#### Derivation inference rules
+[I11: (?e2 prov:wasDerivedFrom ?e1), makeTemp(?processBN) -> (?e2 prov:wasGeneratedBy ?processBN), (?processBN prov:used ?e1)]
+
+#### Revision inference rules (qualified derivation)
+[I12: (?rev rdf:type prov:Revision), (?e2 ?rev ?e1) -> (?e2 prov:alternateOf ?e1)]
+[I12_bis: (?e2 prov:wasRevisionOf ?e1) -> (?e2 prov:alternateOf ?e1)]
+
+#### Attribution inference rules
+[I13: (?e prov:wasAttributedTo ?a), makeTemp(?processBN) -> (?e prov:wasGeneratedBy ?processBN), (?processBN prov:wasAssociatedWith ?a)]
+
+#### Delegation inference rules
+[I14: (?a1 prov:actedOnBehalfOf ?a2), makeTemp(?activityBN) -> (?activityBN prov:wasAssociatedWith ?a1), (?activityBN prov:wasAssociatedWith ?a2)]
+
+#### Alternate inference rules
+[I16: ( ?e rdf:type prov:Entity  ) -> ( ?e prov:alternateOf ?e  )]
+[I17: ( ?e1 prov:alternateOf ?e2 ), ( ?e2 prov:alternateOf ?e3 ) -> ( ?e1 prov:alternateOf ?e3 )]
+[I18: ( ?e1 prov:alternateOf ?e2  ) -> ( ?e2 prov:alternateOf ?e1  )]
+
+#### Specialization inference rules
+[I19 (?e1 prov:specializationOf ?e2), (?e2 prov:specializationOf ?e3) -> (?e1 prov:specializationOf ?e3)]
+[I20 (?e1 prov:specializationOf ?e2) -> (?e1 prov:alternateOf ?e2)]
+[I21 (?e1 rdf:type prov:Entity), (?e2 prov:specializationOf ?e1) -> (?e2 rdf:type prov:Entity)]

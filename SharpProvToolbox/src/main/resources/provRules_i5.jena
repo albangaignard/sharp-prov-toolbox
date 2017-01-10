@@ -1,0 +1,4 @@
+@prefix prov: <http://www.w3.org/ns/prov#>
+
+#### Communication inference rules
+[I5: ( ?act2 prov:wasInformedBy ?act1), makeTemp(?e) -> (?act2 prov:used ?e), (?e prov:wasGeneratedBy ?act1)]
