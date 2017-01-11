@@ -43,7 +43,7 @@ public class Harmonization {
         return pathInfProv.toFile();
     }
     
-    public static Model harmonizeProv(Model inputProvGraph) throws IOException {
+    public static Model harmonizeProv(Model inputProvGraph) {
         logger.info("Asserted graph : Graph size / BNodes : " + inputProvGraph.size() + "/" + Unification.countBN(inputProvGraph));
 //        Util.dumpPredStats(inputProvGraph);
 
