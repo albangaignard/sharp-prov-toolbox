@@ -5,10 +5,11 @@ package fr.cnrs.sharp.test;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
+import fr.cnrs.sharp.reasoning.Harmonization;
 import fr.cnrs.sharp.reasoning.Unification;
+import fr.cnrs.sharp.reasoning.Util;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -24,6 +25,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -83,9 +85,9 @@ public class UnificationRuleTest {
         RDFDataMgr.read(data, stream, Lang.TTL);
         data.write(System.out, "TTL");
         logger.info("Graph size / BNodes : " + data.size() + "/" + Unification.countBN(data));
-        
-        Assert.assertEquals(13,data.size());
-        Assert.assertEquals(3,Unification.countBN(data));
+
+        Assert.assertEquals(13, data.size());
+        Assert.assertEquals(3, Unification.countBN(data));
 
         int nbSubst = 1;
         while (nbSubst > 0) {
@@ -104,9 +106,28 @@ public class UnificationRuleTest {
             logger.info("Found substitutions: " + nbSubst + " after merging");
         }
         data.write(System.out, "TTL");
-        
-        Assert.assertEquals(10,data.size());
-        Assert.assertEquals(1,Unification.countBN(data));
+
+        Assert.assertEquals(10, data.size());
+        Assert.assertEquals(1, Unification.countBN(data));
     }
 
+    @Test
+    public void testFullHarmonization() throws IOException {
+        Model data = ModelFactory.createDefaultModel();
+        InputStream stream = new ByteArrayInputStream(inputGraph.getBytes(StandardCharsets.UTF_8));
+        RDFDataMgr.read(data, stream, Lang.TTL);
+        data.write(System.out, "TTL");
+        logger.info("Graph size / BNodes : " + data.size() + "/" + Unification.countBN(data));
+
+        Assert.assertEquals(13, data.size());
+        Assert.assertEquals(3, Unification.countBN(data));
+
+        Model hData = Harmonization.harmonizeProv(data);
+        logger.info("Harmonized graph size / BNodes : " + hData.size() + "/" + Unification.countBN(hData));
+
+//        Assert.assertEquals(2863, hData.size()); // non-deterministic data size !!
+        Assert.assertEquals(3, Unification.countBN(hData)); // !! should be 1 ? !!
+        Util.describeBlankNodes(data);
+        Util.describeBlankNodes(hData);
+    }
 }

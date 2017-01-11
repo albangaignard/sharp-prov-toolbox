@@ -92,7 +92,7 @@ public class ScenarioExpeTest {
         Reasoner owlReasoner = ReasonerRegistry.getOWLMiniReasoner();
         owlReasoner = owlReasoner.bindSchema(schema);
         InfModel owlModel = ModelFactory.createInfModel(owlReasoner, data);
-//        logger.info("OWL entail : Graph size / BNodes : " + owlModel.size() + "/" + Unification.countBN(owlModel));
+        logger.info("OWL entail : Graph size / BNodes : " + owlModel.size() + "/" + Unification.countBN(owlModel));
 //        dumpPredStats(owlModel);
 
         /// STEP 2.1 : PROV inferences TGD == saturation
@@ -107,7 +107,7 @@ public class ScenarioExpeTest {
 //        Path pathInfProvTGD = Files.createTempFile("PROV-inf-tgd-", ".ttl");
 //        m2.write(new FileWriter(pathInfProvTGD.toFile()), "TTL");
 //        System.out.println("PROV inferences file written to " + pathInfProvTGD.toString());
-//        logger.info("TGD : Graph size / BNodes with saturated PROV graph: " + m2.size() + "/" + Unification.countBN(m2));
+        logger.info("TGD : Graph size / BNodes with saturated PROV graph: " + m2.size() + "/" + Unification.countBN(m2));
 //        dumpPredStats(m2);
 
 //        StopWatch sw3 = new StopWatch();
