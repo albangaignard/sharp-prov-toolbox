@@ -49,7 +49,8 @@ public class Harmonization {
 
         /// STEP 1 : OWL sameAs inferences
         Model schema = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(schema, "file:///Users/gaignard-a/Documents/Publis/eswc-2017/provenance-reasoning-mine/experiments/provo.ttl", Lang.TURTLE);
+//        RDFDataMgr.read(schema, "file:///Users/gaignard-a/Documents/Publis/eswc-2017/provenance-reasoning-mine/experiments/provo.ttl", Lang.TURTLE);
+        RDFDataMgr.read(schema, Harmonization.class.getClassLoader().getResourceAsStream("provo.ttl"), Lang.TURTLE);
         Reasoner owlReasoner = ReasonerRegistry.getOWLMiniReasoner();
         owlReasoner = owlReasoner.bindSchema(schema);
         InfModel owlModel = ModelFactory.createInfModel(owlReasoner, inputProvGraph);
