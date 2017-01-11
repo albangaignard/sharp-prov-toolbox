@@ -78,9 +78,9 @@ public class ScenarioExpeTest {
     @Test
     public void multiSiteWFTest() throws IOException {
         Model data = ModelFactory.createDefaultModel();
-        data.read(ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl"), "TTL");
-        data.read(ScenarioExpeTest.class.getClassLoader().getResourceAsStream("taverna.prov.ttl"), "TTL");
-        data.read(ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl"), "TTL");
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl") , Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("taverna.prov.ttl") , Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl") , Lang.TTL);
 
         Model res = Harmonization.harmonizeProv(data);
         Assert.assertEquals(10, Unification.countBN(res));

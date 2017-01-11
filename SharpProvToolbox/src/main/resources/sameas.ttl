@@ -1,0 +1,5 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001> owl:sameAs <http://fr.symetric#9dc1dd64e02bb035> .
+#<http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001> prov:alternateOf <http://fr.symetric#9dc1dd64e02bb035> .
