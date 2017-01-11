@@ -45,11 +45,10 @@ public class Harmonization {
     
     public static Model harmonizeProv(Model inputProvGraph) throws IOException {
         logger.info("Asserted graph : Graph size / BNodes : " + inputProvGraph.size() + "/" + Unification.countBN(inputProvGraph));
-        Util.dumpPredStats(inputProvGraph);
+//        Util.dumpPredStats(inputProvGraph);
 
         /// STEP 1 : OWL sameAs inferences
         Model schema = ModelFactory.createDefaultModel();
-//        RDFDataMgr.read(schema, "file:///Users/gaignard-a/Documents/Publis/eswc-2017/provenance-reasoning-mine/experiments/provo.ttl", Lang.TURTLE);
         RDFDataMgr.read(schema, Harmonization.class.getClassLoader().getResourceAsStream("provo.ttl"), Lang.TURTLE);
         Reasoner owlReasoner = ReasonerRegistry.getOWLMiniReasoner();
         owlReasoner = owlReasoner.bindSchema(schema);
@@ -80,7 +79,7 @@ public class Harmonization {
         }
 
         logger.info("OWL+TGD+EGD : Graph size / BNodes : " + harmonizedModel.size() + "/" + Unification.countBN(harmonizedModel));
-        Util.dumpPredStats(harmonizedModel);
+//        Util.dumpPredStats(harmonizedModel);
         return harmonizedModel;
     }
 }
