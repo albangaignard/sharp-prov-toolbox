@@ -7,7 +7,7 @@ package fr.cnrs.sharp.test;
  */
 import fr.cnrs.sharp.reasoning.Harmonization;
 import fr.cnrs.sharp.reasoning.Unification;
-import fr.cnrs.sharp.reasoning.Util;
+import fr.cnrs.sharp.Util;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -125,7 +125,6 @@ public class UnificationRuleTest {
         Model hData = Harmonization.harmonizeProv(data);
         logger.info("Harmonized graph size / BNodes : " + hData.size() + "/" + Unification.countBN(hData));
 
-//        Assert.assertEquals(2863, hData.size()); // non-deterministic data size !!
         Assert.assertEquals(3, Unification.countBN(hData)); // !! should be 1 ? !!
         Util.describeBlankNodes(data);
         Util.describeBlankNodes(hData);
