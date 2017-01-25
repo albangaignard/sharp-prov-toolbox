@@ -5,32 +5,23 @@ package fr.cnrs.sharp.test;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import fr.cnrs.sharp.Main;
+import fr.cnrs.sharp.Util;
 import fr.cnrs.sharp.reasoning.Harmonization;
 import fr.cnrs.sharp.reasoning.Unification;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
-import org.apache.jena.rdf.model.InfModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.reasoner.Reasoner;
-import org.apache.jena.reasoner.ReasonerRegistry;
-import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
-import org.apache.jena.reasoner.rulesys.Rule;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.util.FileManager;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -78,11 +69,50 @@ public class ScenarioExpeTest {
     @Test
     public void multiSiteWFTest() throws IOException {
         Model data = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl") , Lang.TTL);
-        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("taverna.prov.ttl") , Lang.TTL);
-        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl") , Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl"), Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("taverna.prov.ttl"), Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl"), Lang.TTL);
 
         Model res = Harmonization.harmonizeProv(data);
         Assert.assertEquals(10, Unification.countBN(res));
+    }
+
+    @Test
+    public void multiSiteSummaryTest() throws IOException {
+        Model data = ModelFactory.createDefaultModel();
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl"), Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("taverna.prov.ttl"), Lang.TTL);
+        RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl"), Lang.TTL);
+
+        Model res = Harmonization.harmonizeProv(data);
+        Assert.assertEquals(10, Unification.countBN(res));
+
+        Path pathInfProv = Files.createTempFile("PROV-inf-tgd-egd-", ".ttl");
+        res.write(new FileWriter(pathInfProv.toFile()), "TTL");
+        logger.info("PROV inferences file written to " + pathInfProv.toString());
+
+        String queryInfluence = 
+                  "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n"
+                + "PREFIX prov: <http://www.w3.org/ns/prov#> \n"
+                + "CONSTRUCT { \n"
+                + "    ?x ?p ?y .\n"
+                + "    ?x rdfs:label ?lx .\n"
+                + "    ?y rdfs:label ?ly .\n"
+                + "} WHERE {\n"
+                + "    ?x ?p ?y .\n"
+                + "    FILTER (?p IN (prov:wasInfluencedBy)) .\n"
+                + "    ?x rdfs:label ?lx .\n"
+                + "    ?y rdfs:label ?ly .\n"
+                + "}";
+        
+        Query query = QueryFactory.create(queryInfluence) ;
+        QueryExecution queryExec = QueryExecutionFactory.create(query, res);
+        Model summary = queryExec.execConstruct();
+        queryExec.close();
+        
+        Assert.assertTrue(summary.size() > 200);
+        Assert.assertEquals(0, Unification.countBN(summary));
+        
+        Util.writeHtmlViz(summary);
     }
 }
