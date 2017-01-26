@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.univ-nantes</groupId>
-    <artifactId>SharpProvToolbox</artifactId>
+    <artifactId>SHARP</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
@@ -114,9 +114,10 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
+                    <shadeTestJar>true</shadeTestJar>
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                     <shadedArtifactAttached>true</shadedArtifactAttached>
-                    <shadedClassifierName>SharpToolboxLauncher-launcher</shadedClassifierName>
+                    <shadedClassifierName>launcher</shadedClassifierName>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
@@ -136,7 +137,7 @@
                         </goals>
                         <configuration>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>-->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>fr.cnrs.sharp.Main</mainClass>
                                 </transformer>
