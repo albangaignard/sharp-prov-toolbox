@@ -10,7 +10,8 @@ Several ontologies have been proposed to extend the multi-purpose PROV-O ontolog
 
 ## Usage in command line
 SHARP is available as a standalone command line interface. 
-   java -jar ... -h
+   
+    java -jar ... -h
 
 ## Usage as an API
 
