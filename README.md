@@ -1,4 +1,4 @@
-# SHARP provenance toolbox
+# SHARP provenance toolbox [![Build Status](https://travis-ci.org/albangaignard/sharp-prov-toolbox.svg?branch=master)](https://travis-ci.org/albangaignard/sharp-prov-toolbox)
 
 ## Synopsis
 SHARP is a reasearch prototype aimed at harmonizing heterogeneous provenance graphs through reasoning (PROV inferences). [PROV Constraints inferences rules](https://www.w3.org/TR/prov-constraints/) have been implemented through the JENA forward chaining inference engine. 
