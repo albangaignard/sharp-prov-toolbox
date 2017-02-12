@@ -31,7 +31,7 @@ Or it can be used to interlink and harmonize cross workflow provenance traces, a
 
     java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/galaxy.prov.ttl sample-data/taverna.prov.ttl sample-data/sameas.ttl -s
     
-Finally, the `-s` option generates a visualization of the resulting provenance graph. In the following screenshot, a workflow partly enacted on Galaxy and Taverna is depicted : 
+Finally, the `-s` option generates a visualization of the resulting provenance graph, based on inferred *prov:wasInfluencedBy* predicates. In the following screenshot, a workflow partly enacted on Galaxy and Taverna is depicted : 
 
 ![Harmonized provenance graphs](img/multi-site-PROV.png)
    
