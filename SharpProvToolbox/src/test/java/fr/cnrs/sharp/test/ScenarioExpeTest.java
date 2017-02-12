@@ -58,15 +58,8 @@ public class ScenarioExpeTest {
     public void tearDown() {
     }
 
-    public void dumpPredStats(Model m) {
-        String topPredicatesQuery = "SELECT  ?p (COUNT(?s) AS ?count ) { ?s ?p ?o } GROUP BY ?p ORDER BY DESC(?count) LIMIT 10";
-        Query query = QueryFactory.create(topPredicatesQuery);
-        QueryExecution qexec = QueryExecutionFactory.create(query, m);
-        ResultSet results = qexec.execSelect();
-        System.out.println(ResultSetFormatter.asText(results));
-    }
-
     @Test
+//    @Ignore
     public void multiSiteWFTest() throws IOException {
         Model data = ModelFactory.createDefaultModel();
         RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("galaxy.prov.ttl"), Lang.TTL);
@@ -74,9 +67,10 @@ public class ScenarioExpeTest {
         RDFDataMgr.read(data, ScenarioExpeTest.class.getClassLoader().getResourceAsStream("sameas.ttl"), Lang.TTL);
 
         Model res = Harmonization.harmonizeProv(data);
+        Util.dumpPredStats(res);
         Assert.assertEquals(10, Unification.countBN(res));
     }
-
+    
     @Test
     public void multiSiteSummaryTest() throws IOException {
         Model data = ModelFactory.createDefaultModel();
@@ -91,8 +85,7 @@ public class ScenarioExpeTest {
         res.write(new FileWriter(pathInfProv.toFile()), "TTL");
         logger.info("PROV inferences file written to " + pathInfProv.toString());
 
-        String queryInfluence = 
-                  "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n"
+        String queryInfluence = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n"
                 + "PREFIX prov: <http://www.w3.org/ns/prov#> \n"
                 + "CONSTRUCT { \n"
                 + "    ?x ?p ?y .\n"
@@ -104,15 +97,15 @@ public class ScenarioExpeTest {
                 + "    ?x rdfs:label ?lx .\n"
                 + "    ?y rdfs:label ?ly .\n"
                 + "}";
-        
-        Query query = QueryFactory.create(queryInfluence) ;
+
+        Query query = QueryFactory.create(queryInfluence);
         QueryExecution queryExec = QueryExecutionFactory.create(query, res);
         Model summary = queryExec.execConstruct();
         queryExec.close();
-        
+
         Assert.assertTrue(summary.size() > 200);
         Assert.assertEquals(0, Unification.countBN(summary));
-        
+
         Util.writeHtmlViz(summary);
     }
 }
