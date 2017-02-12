@@ -1,6 +1,18 @@
-# SHARP-prov-toolbox
+# SHARP provenance toolbox [![Build Status](https://travis-ci.org/albangaignard/sharp-prov-toolbox.svg?branch=master)](https://travis-ci.org/albangaignard/sharp-prov-toolbox)
+
 ## Synopsis
-SHARP-prov-toolbox is a tool aimed at harmonizing heterogeneous provenance graphs based on reasoning (PROV inferences). PROV Constraints inferences rules have been implemented through the JENA forward chaining inference engine.  
+SHARP is a reasearch prototype aimed at harmonizing heterogeneous provenance graphs through reasoning (PROV inferences). [PROV Constraints inferences rules](https://www.w3.org/TR/prov-constraints/) have been implemented through the JENA forward chaining inference engine. 
+
 ## Motivations
-## Usage
+Several ontologies have been proposed to extend the multi-purpose PROV-O ontology, such as [prov-one](http://vcvcomputing.com/provone/provone.html), [wfprov](http://lov.okfn.org/dataset/lov/vocabs/wfprov). The mutiplication of PROV-extended vocabularies makes it diffcult to link and cross-exploit multi-systems provenance graphs. In addition, even if workflow management systems produce strictly PROV-O entities, there is no guaranty that the same classes and properties are used, which possibly leads to non joinable graphs. 
+
+**With SHARP, our goal is to propose reasoning mechanisms to produce harmonized provenance graphs, that can be more easily  linked together and shared.**
+
+## Usage in command line
+SHARP is available as a standalone command line interface. 
+   
+    java -jar ... -h
+
+## Usage as an API
+
 ## License
