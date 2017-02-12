@@ -20,9 +20,28 @@ Or it can be used to interlink and harmonize cross workflow provenance traces, a
 ## Usage as an API
 The project can be compiled as follows : 
 
-    cd Sharp-prov-toolbox
+    cd SharpProvToolbox
     mvn clean install -Dmaven.test.skip=true
     
+Then, when this jar is in your classpath, you can benefit from PROV inferences as follows. 
     
+A PROV RDF graph can be loaded with the JENA API : 
+    
+    String inputGraph = "Your PROV graph in TTL syntax";
+    Model data = ModelFactory.createDefaultModel();
+    InputStream stream = new ByteArrayInputStream(inputGraph.getBytes(StandardCharsets.UTF_8));
+    RDFDataMgr.read(data, stream, Lang.TTL);
+    
+Then, the inferences and blank node unification is performed as follows : 
+
+    Model res = Harmonization.harmonizeProv(data);
+    Util.dumpPredStats(res); // prints the main predicates in the graph
+   
+Finally, we povides a basic visualization of the resulting PROV graph, based on the D3.js framework :
+    
+    Util.writeHtmlViz(data);
+    Util.writeHtmlViz(res);
+
+## Maven dependencies 
 
 ## License
