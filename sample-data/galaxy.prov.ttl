@@ -1,0 +1,805 @@
+@base         <http://fr.symetric> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sym:   <http://fr.symetric/vocab#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<> 
+   a prov:Bundle, prov:Entity;
+   prov:wasAttributedTo <#galaxy2prov>;
+   prov:generatedAtTime "2016-09-22T15:47:53.000839"^^xsd:dateTime;
+. 
+
+<#d167749748068963>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:17.528870"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:28.100107"^^xsd:dateTime; 
+.
+
+<#be57396b57f6b6cc>
+    a prov:Entity;
+    prov:wasGeneratedBy <#d167749748068963>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12892.R2.fastq";
+.
+
+<#7db2f505883083bc>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:18.668890"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:28.111697"^^xsd:dateTime; 
+.
+
+<#73f909a10e5cdc63>
+    a prov:Entity;
+    prov:wasGeneratedBy <#7db2f505883083bc>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12892.R1.fastq";
+.
+
+<#2419ecfd3f06aac1>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:19.704054"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:28.041413"^^xsd:dateTime; 
+.
+
+<#673685fea1baf60a>
+    a prov:Entity;
+    prov:wasGeneratedBy <#2419ecfd3f06aac1>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12891.R2.fastq";
+.
+
+<#ea551fabcde0fa0d>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:20.943296"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:28.106954"^^xsd:dateTime; 
+.
+
+<#10a59efb7c60327e>
+    a prov:Entity;
+    prov:wasGeneratedBy <#ea551fabcde0fa0d>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12891.R1.fastq";
+.
+
+<#9055017035f6b6f5>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:28.139118"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:32.937905"^^xsd:dateTime; 
+.
+
+<#9e3da78118ff2007>
+    a prov:Entity;
+    prov:wasGeneratedBy <#9055017035f6b6f5>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12878.R2.ab.fastq";
+.
+
+<#299006b42b7a99da>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:29.354905"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:33.817170"^^xsd:dateTime; 
+.
+
+<#d49c024deb751707>
+    a prov:Entity;
+    prov:wasGeneratedBy <#299006b42b7a99da>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12878.R2.aa.fastq";
+.
+
+<#c5cd5e563496d639>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:33.140066"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:38.724928"^^xsd:dateTime; 
+.
+
+<#f601b5e70788878f>
+    a prov:Entity;
+    prov:wasGeneratedBy <#c5cd5e563496d639>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12878.R1.ab.fastq";
+.
+
+<#1a8070d2933cecdd>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#upload1> ;
+    prov:startedAtTime "2016-06-28T08:19:33.821211"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-28T08:19:38.727111"^^xsd:dateTime; 
+.
+
+<#9030764ea8d5e704>
+    a prov:Entity;
+    prov:wasGeneratedBy <#1a8070d2933cecdd>;
+    prov:wasAttributedTo <#upload1>;
+    rdfs:label "NA12878.R1.aa.fastq";
+.
+
+<#16307370c1e4bcd2>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9> ;
+    prov:startedAtTime "2015-12-09T13:13:12.350209"^^xsd:dateTime; 
+    prov:endedAtTime "2015-12-09T16:50:18.463860"^^xsd:dateTime; 
+    prov:used <#e119fc8b30c02e0c>;
+    prov:used <#e0f10bec603285c8>;
+    prov:used <#be8b37b6be5ef8c0>;
+    prov:used <#fc9429d7adce4e2c>;
+    prov:used <#4cad7bb971256547>;
+    prov:used <#a66f369a31395018>;
+    prov:used <#f88c7248ecce0238>;
+    prov:used <#GRCh37>;
+    prov:used <#47a65b9149410122>;
+    prov:used <#cf66897b71b0f768>;
+    prov:used <#70a8f3fea55a65e1>;
+    prov:used <#f03769116286d120>;
+    prov:used <#849837c518091895>;
+    prov:used <#5d25964795a51b38>;
+    prov:used <#231ad2cb39e26fad>;
+.
+
+<#e119fc8b30c02e0c>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_001.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_115.dat".
+
+<#e0f10bec603285c8>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_002.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_109.dat".
+
+<#be8b37b6be5ef8c0>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_001.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_108.dat".
+
+<#fc9429d7adce4e2c>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_003.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_117.dat".
+
+<#4cad7bb971256547>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_004.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_111.dat".
+
+<#a66f369a31395018>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_002.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_116.dat".
+
+<#f88c7248ecce0238>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_003.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_110.dat".
+
+<#GRCh37>
+    a prov:Entity;
+    rdfs:label "GRCh37".
+
+<#47a65b9149410122>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_004.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_118.dat".
+
+<#cf66897b71b0f768>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_005.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_112.dat".
+
+<#70a8f3fea55a65e1>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_007.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_121.dat".
+
+<#f03769116286d120>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_006.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_113.dat".
+
+<#849837c518091895>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_005.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_119.dat".
+
+<#5d25964795a51b38>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R2_006.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_120.dat".
+
+<#231ad2cb39e26fad>
+    a prov:Entity;
+    rdfs:label "Z138_ATGCCTAA_L006_R1_007.fastq.gz";
+    rdfs:label "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_114.dat".
+
+<#e6135ea9cc8eb06c>
+    a prov:Entity;
+    prov:wasGeneratedBy <#16307370c1e4bcd2>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9>;
+    rdfs:label "NA12878.R1";
+    prov:wasDerivedFrom <#e119fc8b30c02e0c>;
+    prov:wasDerivedFrom <#e0f10bec603285c8>;
+    prov:wasDerivedFrom <#be8b37b6be5ef8c0>;
+    prov:wasDerivedFrom <#fc9429d7adce4e2c>;
+    prov:wasDerivedFrom <#4cad7bb971256547>;
+    prov:wasDerivedFrom <#a66f369a31395018>;
+    prov:wasDerivedFrom <#f88c7248ecce0238>;
+    prov:wasDerivedFrom <#GRCh37>;
+    prov:wasDerivedFrom <#47a65b9149410122>;
+    prov:wasDerivedFrom <#cf66897b71b0f768>;
+    prov:wasDerivedFrom <#70a8f3fea55a65e1>;
+    prov:wasDerivedFrom <#f03769116286d120>;
+    prov:wasDerivedFrom <#849837c518091895>;
+    prov:wasDerivedFrom <#5d25964795a51b38>;
+    prov:wasDerivedFrom <#231ad2cb39e26fad>;
+.
+
+<#16307370c1e4bcd2>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9> ;
+    prov:startedAtTime "2015-12-09T13:13:12.350209"^^xsd:dateTime; 
+    prov:endedAtTime "2015-12-09T16:50:18.463860"^^xsd:dateTime; 
+    prov:used <#e119fc8b30c02e0c>;
+    prov:used <#e0f10bec603285c8>;
+    prov:used <#be8b37b6be5ef8c0>;
+    prov:used <#fc9429d7adce4e2c>;
+    prov:used <#4cad7bb971256547>;
+    prov:used <#a66f369a31395018>;
+    prov:used <#f88c7248ecce0238>;
+    prov:used <#GRCh37>;
+    prov:used <#47a65b9149410122>;
+    prov:used <#cf66897b71b0f768>;
+    prov:used <#70a8f3fea55a65e1>;
+    prov:used <#f03769116286d120>;
+    prov:used <#849837c518091895>;
+    prov:used <#5d25964795a51b38>;
+    prov:used <#231ad2cb39e26fad>;
+.
+
+<#0ffe9081e1ba5023>
+    a prov:Entity;
+    prov:wasGeneratedBy <#16307370c1e4bcd2>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9>;
+    rdfs:label "NA12878.R2";
+    prov:wasDerivedFrom <#e119fc8b30c02e0c>;
+    prov:wasDerivedFrom <#e0f10bec603285c8>;
+    prov:wasDerivedFrom <#be8b37b6be5ef8c0>;
+    prov:wasDerivedFrom <#fc9429d7adce4e2c>;
+    prov:wasDerivedFrom <#4cad7bb971256547>;
+    prov:wasDerivedFrom <#a66f369a31395018>;
+    prov:wasDerivedFrom <#f88c7248ecce0238>;
+    prov:wasDerivedFrom <#GRCh37>;
+    prov:wasDerivedFrom <#47a65b9149410122>;
+    prov:wasDerivedFrom <#cf66897b71b0f768>;
+    prov:wasDerivedFrom <#70a8f3fea55a65e1>;
+    prov:wasDerivedFrom <#f03769116286d120>;
+    prov:wasDerivedFrom <#849837c518091895>;
+    prov:wasDerivedFrom <#5d25964795a51b38>;
+    prov:wasDerivedFrom <#231ad2cb39e26fad>;
+.
+
+<#5acccd59260c0467>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9> ;
+    prov:startedAtTime "2015-12-09T13:13:12.833680"^^xsd:dateTime; 
+    prov:endedAtTime "2015-12-09T16:51:51.905051"^^xsd:dateTime; 
+    prov:used <#e119fc8b30c02e0c>;
+    prov:used <#e0f10bec603285c8>;
+    prov:used <#be8b37b6be5ef8c0>;
+    prov:used <#fc9429d7adce4e2c>;
+    prov:used <#4cad7bb971256547>;
+    prov:used <#a66f369a31395018>;
+    prov:used <#f88c7248ecce0238>;
+    prov:used <#GRCh37>;
+    prov:used <#47a65b9149410122>;
+    prov:used <#cf66897b71b0f768>;
+    prov:used <#70a8f3fea55a65e1>;
+    prov:used <#f03769116286d120>;
+    prov:used <#849837c518091895>;
+    prov:used <#5d25964795a51b38>;
+    prov:used <#231ad2cb39e26fad>;
+.
+
+<#b8c5e0be0730e636>
+    a prov:Entity;
+    prov:wasGeneratedBy <#5acccd59260c0467>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9>;
+    rdfs:label "NA12892";
+    prov:wasDerivedFrom <#e119fc8b30c02e0c>;
+    prov:wasDerivedFrom <#e0f10bec603285c8>;
+    prov:wasDerivedFrom <#be8b37b6be5ef8c0>;
+    prov:wasDerivedFrom <#fc9429d7adce4e2c>;
+    prov:wasDerivedFrom <#4cad7bb971256547>;
+    prov:wasDerivedFrom <#a66f369a31395018>;
+    prov:wasDerivedFrom <#f88c7248ecce0238>;
+    prov:wasDerivedFrom <#GRCh37>;
+    prov:wasDerivedFrom <#47a65b9149410122>;
+    prov:wasDerivedFrom <#cf66897b71b0f768>;
+    prov:wasDerivedFrom <#70a8f3fea55a65e1>;
+    prov:wasDerivedFrom <#f03769116286d120>;
+    prov:wasDerivedFrom <#849837c518091895>;
+    prov:wasDerivedFrom <#5d25964795a51b38>;
+    prov:wasDerivedFrom <#231ad2cb39e26fad>;
+.
+
+<#5acccd59260c0467>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9> ;
+    prov:startedAtTime "2015-12-09T13:13:12.833680"^^xsd:dateTime; 
+    prov:endedAtTime "2015-12-09T16:51:51.905051"^^xsd:dateTime; 
+    prov:used <#e119fc8b30c02e0c>;
+    prov:used <#e0f10bec603285c8>;
+    prov:used <#be8b37b6be5ef8c0>;
+    prov:used <#fc9429d7adce4e2c>;
+    prov:used <#4cad7bb971256547>;
+    prov:used <#a66f369a31395018>;
+    prov:used <#f88c7248ecce0238>;
+    prov:used <#GRCh37>;
+    prov:used <#47a65b9149410122>;
+    prov:used <#cf66897b71b0f768>;
+    prov:used <#70a8f3fea55a65e1>;
+    prov:used <#f03769116286d120>;
+    prov:used <#849837c518091895>;
+    prov:used <#5d25964795a51b38>;
+    prov:used <#231ad2cb39e26fad>;
+.
+
+<#ef96b5881d65cea3>
+    a prov:Entity;
+    prov:wasGeneratedBy <#5acccd59260c0467>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9>;
+    rdfs:label "NA12891";
+    prov:wasDerivedFrom <#e119fc8b30c02e0c>;
+    prov:wasDerivedFrom <#e0f10bec603285c8>;
+    prov:wasDerivedFrom <#be8b37b6be5ef8c0>;
+    prov:wasDerivedFrom <#fc9429d7adce4e2c>;
+    prov:wasDerivedFrom <#4cad7bb971256547>;
+    prov:wasDerivedFrom <#a66f369a31395018>;
+    prov:wasDerivedFrom <#f88c7248ecce0238>;
+    prov:wasDerivedFrom <#GRCh37>;
+    prov:wasDerivedFrom <#47a65b9149410122>;
+    prov:wasDerivedFrom <#cf66897b71b0f768>;
+    prov:wasDerivedFrom <#70a8f3fea55a65e1>;
+    prov:wasDerivedFrom <#f03769116286d120>;
+    prov:wasDerivedFrom <#849837c518091895>;
+    prov:wasDerivedFrom <#5d25964795a51b38>;
+    prov:wasDerivedFrom <#231ad2cb39e26fad>;
+.
+
+<#5acccd59260c0467>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9> ;
+    prov:startedAtTime "2015-12-09T13:13:12.833680"^^xsd:dateTime; 
+    prov:endedAtTime "2015-12-09T16:51:51.905051"^^xsd:dateTime; 
+    prov:used <#e119fc8b30c02e0c>;
+    prov:used <#e0f10bec603285c8>;
+    prov:used <#be8b37b6be5ef8c0>;
+    prov:used <#fc9429d7adce4e2c>;
+    prov:used <#4cad7bb971256547>;
+    prov:used <#a66f369a31395018>;
+    prov:used <#f88c7248ecce0238>;
+    prov:used <#GRCh37>;
+    prov:used <#47a65b9149410122>;
+    prov:used <#cf66897b71b0f768>;
+    prov:used <#70a8f3fea55a65e1>;
+    prov:used <#f03769116286d120>;
+    prov:used <#849837c518091895>;
+    prov:used <#5d25964795a51b38>;
+    prov:used <#231ad2cb39e26fad>;
+.
+
+<#d2d1d8ad250776a6>
+    a prov:Entity;
+    prov:wasGeneratedBy <#5acccd59260c0467>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/tophat2/tophat2/0.9>;
+    rdfs:label "PairedSamples";
+    prov:wasDerivedFrom <#e119fc8b30c02e0c>;
+    prov:wasDerivedFrom <#e0f10bec603285c8>;
+    prov:wasDerivedFrom <#be8b37b6be5ef8c0>;
+    prov:wasDerivedFrom <#fc9429d7adce4e2c>;
+    prov:wasDerivedFrom <#4cad7bb971256547>;
+    prov:wasDerivedFrom <#a66f369a31395018>;
+    prov:wasDerivedFrom <#f88c7248ecce0238>;
+    prov:wasDerivedFrom <#GRCh37>;
+    prov:wasDerivedFrom <#47a65b9149410122>;
+    prov:wasDerivedFrom <#cf66897b71b0f768>;
+    prov:wasDerivedFrom <#70a8f3fea55a65e1>;
+    prov:wasDerivedFrom <#f03769116286d120>;
+    prov:wasDerivedFrom <#849837c518091895>;
+    prov:wasDerivedFrom <#5d25964795a51b38>;
+    prov:wasDerivedFrom <#231ad2cb39e26fad>;
+.
+
+<#9024320596aa9f8b>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-29T15:10:23.522525"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:10:48.989462"^^xsd:dateTime; 
+    prov:used <#d49c024deb751707>;
+    prov:used <#9030764ea8d5e704>;
+.
+
+<#fc59f0a8badd862c>
+    a prov:Entity;
+    prov:wasGeneratedBy <#9024320596aa9f8b>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 6 and data 8 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#d49c024deb751707>;
+    prov:wasDerivedFrom <#9030764ea8d5e704>;
+.
+
+<#afe3500492565e6f>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-29T15:10:36.978501"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:11:00.373593"^^xsd:dateTime; 
+    prov:used <#9e3da78118ff2007>;
+    prov:used <#f601b5e70788878f>;
+.
+
+<#32ce4966f32bd592>
+    a prov:Entity;
+    prov:wasGeneratedBy <#afe3500492565e6f>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 5 and data 7 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#9e3da78118ff2007>;
+    prov:wasDerivedFrom <#f601b5e70788878f>;
+.
+
+<#e957a4bdc5773c7f>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-29T15:10:48.879587"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:12:03.039370"^^xsd:dateTime; 
+    prov:used <#673685fea1baf60a>;
+    prov:used <#10a59efb7c60327e>;
+.
+
+<#20f38b0908fe3954>
+    a prov:Entity;
+    prov:wasGeneratedBy <#e957a4bdc5773c7f>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 3 and data 4 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#673685fea1baf60a>;
+    prov:wasDerivedFrom <#10a59efb7c60327e>;
+.
+
+<#bf561d446737d073>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-29T15:10:56.849642"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:11:58.223705"^^xsd:dateTime; 
+    prov:used <#be57396b57f6b6cc>;
+    prov:used <#73f909a10e5cdc63>;
+.
+
+<#93247a409271844d>
+    a prov:Entity;
+    prov:wasGeneratedBy <#bf561d446737d073>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 1 and data 2 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#be57396b57f6b6cc>;
+    prov:wasDerivedFrom <#73f909a10e5cdc63>;
+.
+
+<#c8a602f5293f6ce4>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeSamFiles/1.136.0> ;
+    prov:startedAtTime "2016-06-29T15:11:53.473334"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:12:10.657041"^^xsd:dateTime; 
+    prov:used <#fc59f0a8badd862c>;
+    prov:used <#32ce4966f32bd592>;
+    prov:used <#fc59f0a8badd862c>;
+.
+
+<#12c6d0e45cbe9a0c>
+    a prov:Entity;
+    prov:wasGeneratedBy <#c8a602f5293f6ce4>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_MergeSamFiles/1.136.0>;
+    rdfs:label "MergeSamFiles on data 15 and data 14: Merged BAM dataset";
+    prov:wasDerivedFrom <#fc59f0a8badd862c>;
+    prov:wasDerivedFrom <#32ce4966f32bd592>;
+    prov:wasDerivedFrom <#fc59f0a8badd862c>;
+.
+
+<#15a42703708ae973>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0> ;
+    prov:startedAtTime "2016-06-29T15:12:35.867697"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:12:55.663322"^^xsd:dateTime; 
+    prov:used <#20f38b0908fe3954>;
+.
+
+<#235c242fcfa290e0>
+    a prov:Entity;
+    prov:wasGeneratedBy <#15a42703708ae973>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0>;
+    rdfs:label "Sort on data 16";
+    prov:wasDerivedFrom <#20f38b0908fe3954>;
+.
+
+<#155a23f834535ee1>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0> ;
+    prov:startedAtTime "2016-06-29T15:12:44.319664"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:13:00.245400"^^xsd:dateTime; 
+    prov:used <#93247a409271844d>;
+.
+
+<#481a1bd8c4073bb3>
+    a prov:Entity;
+    prov:wasGeneratedBy <#155a23f834535ee1>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0>;
+    rdfs:label "Sort on data 17";
+    prov:wasDerivedFrom <#93247a409271844d>;
+.
+
+<#6821463e51bab672>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0> ;
+    prov:startedAtTime "2016-06-29T15:12:53.733113"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:13:09.248314"^^xsd:dateTime; 
+    prov:used <#12c6d0e45cbe9a0c>;
+.
+
+<#cf9ae75c5b84a076>
+    a prov:Entity;
+    prov:wasGeneratedBy <#6821463e51bab672>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0>;
+    rdfs:label "Sort on data 18";
+    prov:wasDerivedFrom <#12c6d0e45cbe9a0c>;
+.
+
+<#ce081550cc890216>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-29T15:13:39.068458"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:13:59.228645"^^xsd:dateTime; 
+    prov:used <#235c242fcfa290e0>;
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#481a1bd8c4073bb3>;
+    prov:used <#235c242fcfa290e0>;
+.
+
+<#40f8adb49e6a70ef>
+    a prov:Entity;
+    prov:wasGeneratedBy <#ce081550cc890216>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 21, data 20, and data 19";
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#481a1bd8c4073bb3>;
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+.
+
+<#ce081550cc890216>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-29T15:13:39.068458"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-29T15:13:59.228645"^^xsd:dateTime; 
+    prov:used <#235c242fcfa290e0>;
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#481a1bd8c4073bb3>;
+    prov:used <#235c242fcfa290e0>;
+.
+
+<#080c8290ba090d72>
+    a prov:Entity;
+    prov:wasGeneratedBy <#ce081550cc890216>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 21, data 20, and data 19 (log)";
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#481a1bd8c4073bb3>;
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+.
+
+<#33f7795759719146>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T09:54:23.462177"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:54:43.603160"^^xsd:dateTime; 
+    prov:used <#235c242fcfa290e0>;
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#481a1bd8c4073bb3>;
+    prov:used <#235c242fcfa290e0>;
+.
+
+<#b8d0b4b9ba962ebc>
+    a prov:Entity;
+    prov:wasGeneratedBy <#33f7795759719146>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 21, data 20, and data 19";
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#481a1bd8c4073bb3>;
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+.
+
+<#33f7795759719146>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T09:54:23.462177"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:54:43.603160"^^xsd:dateTime; 
+    prov:used <#235c242fcfa290e0>;
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#481a1bd8c4073bb3>;
+    prov:used <#235c242fcfa290e0>;
+.
+
+<#d62284ec65dc4807>
+    a prov:Entity;
+    prov:wasGeneratedBy <#33f7795759719146>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 21, data 20, and data 19 (log)";
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#481a1bd8c4073bb3>;
+    prov:wasDerivedFrom <#235c242fcfa290e0>;
+.
+
+<#47b9a56c112f4b9a>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-30T09:55:39.095106"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:56:12.234723"^^xsd:dateTime; 
+    prov:used <#673685fea1baf60a>;
+    prov:used <#10a59efb7c60327e>;
+.
+
+<#0721a00306145018>
+    a prov:Entity;
+    prov:wasGeneratedBy <#47b9a56c112f4b9a>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 3 and data 4 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#673685fea1baf60a>;
+    prov:wasDerivedFrom <#10a59efb7c60327e>;
+.
+
+<#3ff0056bda6f7783>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1> ;
+    prov:startedAtTime "2016-06-30T09:56:03.452579"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:56:40.465282"^^xsd:dateTime; 
+    prov:used <#be57396b57f6b6cc>;
+    prov:used <#73f909a10e5cdc63>;
+.
+
+<#fb14bd0e6e67f98a>
+    a prov:Entity;
+    prov:wasGeneratedBy <#3ff0056bda6f7783>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.4.1>;
+    rdfs:label "Map with BWA-MEM on data 1 and data 2 (mapped reads in BAM format)";
+    prov:wasDerivedFrom <#be57396b57f6b6cc>;
+    prov:wasDerivedFrom <#73f909a10e5cdc63>;
+.
+
+<#6ba84e06306c7747>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0> ;
+    prov:startedAtTime "2016-06-30T09:56:43.912905"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:56:54.476720"^^xsd:dateTime; 
+    prov:used <#0721a00306145018>;
+.
+
+<#6434493324409c2d>
+    a prov:Entity;
+    prov:wasGeneratedBy <#6ba84e06306c7747>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0>;
+    rdfs:label "Sort on data 26";
+    prov:wasDerivedFrom <#0721a00306145018>;
+.
+
+<#778a1eeca98d14b1>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0> ;
+    prov:startedAtTime "2016-06-30T09:56:51.335628"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T09:57:08.629929"^^xsd:dateTime; 
+    prov:used <#fb14bd0e6e67f98a>;
+.
+
+<#eff70b9c3fba5912>
+    a prov:Entity;
+    prov:wasGeneratedBy <#778a1eeca98d14b1>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_sort/samtools_sort/2.0>;
+    rdfs:label "Sort on data 27";
+    prov:wasDerivedFrom <#fb14bd0e6e67f98a>;
+.
+
+<#a3c4ee9782d076e4>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T10:01:27.248000"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T10:01:43.289062"^^xsd:dateTime; 
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#eff70b9c3fba5912>;
+    prov:used <#6434493324409c2d>;
+    prov:used <#cf9ae75c5b84a076>;
+.
+
+<#9dc1dd64e02bb035>
+    a prov:Entity;
+    prov:wasGeneratedBy <#a3c4ee9782d076e4>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 29, data 28, and data 21";
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#eff70b9c3fba5912>;
+    prov:wasDerivedFrom <#6434493324409c2d>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+.
+
+<#a3c4ee9782d076e4>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T10:01:27.248000"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T10:01:43.289062"^^xsd:dateTime; 
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#eff70b9c3fba5912>;
+    prov:used <#6434493324409c2d>;
+    prov:used <#cf9ae75c5b84a076>;
+.
+
+<#82f2af234af81ed8>
+    a prov:Entity;
+    prov:wasGeneratedBy <#a3c4ee9782d076e4>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 29, data 28, and data 21 (log)";
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#eff70b9c3fba5912>;
+    prov:wasDerivedFrom <#6434493324409c2d>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+.
+
+<#74d1fccd653af00d>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T10:02:24.588432"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T10:03:44.776594"^^xsd:dateTime; 
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#eff70b9c3fba5912>;
+    prov:used <#6434493324409c2d>;
+    prov:used <#cf9ae75c5b84a076>;
+.
+
+<#6e6c14f8e322639f>
+    a prov:Entity;
+    prov:wasGeneratedBy <#74d1fccd653af00d>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 29, data 28, and data 21";
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#eff70b9c3fba5912>;
+    prov:wasDerivedFrom <#6434493324409c2d>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+.
+
+<#74d1fccd653af00d>
+    a prov:Activity ;
+    prov:wasAssociatedWith <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1> ;
+    prov:startedAtTime "2016-06-30T10:02:24.588432"^^xsd:dateTime; 
+    prov:endedAtTime "2016-06-30T10:03:44.776594"^^xsd:dateTime; 
+    prov:used <#cf9ae75c5b84a076>;
+    prov:used <#eff70b9c3fba5912>;
+    prov:used <#6434493324409c2d>;
+    prov:used <#cf9ae75c5b84a076>;
+.
+
+<#35fa540f7da2222f>
+    a prov:Entity;
+    prov:wasGeneratedBy <#74d1fccd653af00d>;
+    prov:wasAttributedTo <#toolshed.g2.bx.psu.edu/repos/devteam/samtools_mpileup/samtools_mpileup/2.1.1>;
+    rdfs:label "MPileup on data 29, data 28, and data 21 (log)";
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+    prov:wasDerivedFrom <#eff70b9c3fba5912>;
+    prov:wasDerivedFrom <#6434493324409c2d>;
+    prov:wasDerivedFrom <#cf9ae75c5b84a076>;
+.
+

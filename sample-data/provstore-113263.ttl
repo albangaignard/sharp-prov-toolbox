@@ -1,0 +1,794 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix nidm_ExtentThreshold: <http://purl.org/nidash/nidm#NIDM_0000026> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix pre_1: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pre_0: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix nidm_effectDegreesOfFreedom: <http://purl.org/nidash/nidm#NIDM_0000091> .
+@prefix nidm_dependenceMapWiseDependence: <http://purl.org/nidash/nidm#NIDM_0000089> .
+@prefix nidm_grandMeanScaling: <http://purl.org/nidash/nidm#NIDM_0000096> .
+@prefix nidm_PeakDefinitionCriteria: <http://purl.org/nidash/nidm#NIDM_0000063> .
+@prefix obo_tstatistic: <http://purl.obolibrary.org/obo/STATO_0000176> .
+@prefix nidm_spm_results_nidm: <http://purl.org/nidash/nidm#NIDM_0000168> .
+@prefix nidm_equivalentZStatistic: <http://purl.org/nidash/nidm#NIDM_0000092> .
+@prefix nidm_ConjunctionInference: <http://purl.org/nidash/nidm#NIDM_0000011> .
+@prefix nidm_SearchSpaceMaskMap: <http://purl.org/nidash/nidm#NIDM_0000068> .
+@prefix nidm_heightCriticalThresholdFWE05: <http://purl.org/nidash/nidm#NIDM_0000147> .
+@prefix nidm_dimensionsInVoxels: <http://purl.org/nidash/nidm#NIDM_0000090> .
+@prefix nidm_numberOfDimensions: <http://purl.org/nidash/nidm#NIDM_0000112> .
+@prefix nidm_statisticType: <http://purl.org/nidash/nidm#NIDM_0000123> .
+@prefix bnode: <http://openprovenance.org/provtoolbox/bnode/> .
+@prefix nidm_errorDegreesOfFreedom: <http://purl.org/nidash/nidm#NIDM_0000093> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix nidm_contrastName: <http://purl.org/nidash/nidm#NIDM_0000085> .
+@prefix crypto: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix nidm_softwareVersion: <http://purl.org/nidash/nidm#NIDM_0000122> .
+@prefix nidm_heightCriticalThresholdFDR05: <http://purl.org/nidash/nidm#NIDM_0000146> .
+@prefix nidm_ParameterEstimateMap: <http://purl.org/nidash/nidm#NIDM_0000061> .
+@prefix obo_statistic: <http://purl.obolibrary.org/obo/STATO_0000039> .
+@prefix nidm_noiseFWHMInVoxels: <http://purl.org/nidash/nidm#NIDM_0000159> .
+@prefix nidm_hasClusterLabelsMap: <http://purl.org/nidash/nidm#NIDM_0000098> .
+@prefix nidm_isUserDefined: <http://purl.org/nidash/nidm#NIDM_0000106> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix nidm_coordinateVector: <http://purl.org/nidash/nidm#NIDM_0000086> .
+@prefix nidm_numberOfSignificantClusters: <http://purl.org/nidash/nidm#NIDM_0000111> .
+@prefix nidm_pValueUncorrected: <http://purl.org/nidash/nidm#NIDM_0000116> .
+@prefix nidm_voxelToWorldMapping: <http://purl.org/nidash/nidm#NIDM_0000132> .
+@prefix nidm_NIDMResults: <http://purl.org/nidash/nidm#NIDM_0000027> .
+@prefix nidm_ContrastStandardErrorMap: <http://purl.org/nidash/nidm#NIDM_0000013> .
+@prefix nidm_DisplayMaskMap: <http://purl.org/nidash/nidm#NIDM_0000020> .
+@prefix nidm_Inference: <http://purl.org/nidash/nidm#NIDM_0000049> .
+@prefix obo_FWERadjustedpvalue: <http://purl.obolibrary.org/obo/OBI_0001265> .
+@prefix nidm_version: <http://purl.org/nidash/nidm#NIDM_0000127> .
+@prefix nidm_withEstimationMethod: <http://purl.org/nidash/nidm#NIDM_0000134> .
+@prefix src: <http://scicrunch.org/resolver/> .
+@prefix nidm_StatisticMap: <http://purl.org/nidash/nidm#NIDM_0000076> .
+@prefix nidm_PValueUncorrected: <http://purl.org/nidash/nidm#NIDM_0000160> .
+@prefix nlx: <http://uri.neuinfo.org/nif/nifstd/> .
+@prefix nidm_minDistanceBetweenPeaks: <http://purl.org/nidash/nidm#NIDM_0000109> .
+@prefix nidm_ModelParametersEstimation: <http://purl.org/nidash/nidm#NIDM_0000056> .
+@prefix nidm_searchVolumeInUnits: <http://purl.org/nidash/nidm#NIDM_0000136> .
+@prefix nidm_inCoordinateSpace: <http://purl.org/nidash/nidm#NIDM_0000104> .
+@prefix nidm_expectedNumberOfVoxelsPerCluster: <http://purl.org/nidash/nidm#NIDM_0000143> .
+@prefix nidm_hasConnectivityCriterion: <http://purl.org/nidash/nidm#NIDM_0000099> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix nidm_Peak: <http://purl.org/nidash/nidm#NIDM_0000062> .
+@prefix spm_smallestSignificantClusterSizeInVoxelsFWE05: <http://purl.org/nidash/spm#SPM_0000014> .
+@prefix nidm_clusterSizeInVoxels: <http://purl.org/nidash/nidm#NIDM_0000084> .
+@prefix nidm_equivalentThreshold: <http://purl.org/nidash/nidm#NIDM_0000161> .
+@prefix nidm_inWorldCoordinateSystem: <http://purl.org/nidash/nidm#NIDM_0000105> .
+@prefix nidm_hasMaximumIntensityProjection: <http://purl.org/nidash/nidm#NIDM_0000138> .
+@prefix nidm_ResidualMeanSquaresMap: <http://purl.org/nidash/nidm#NIDM_0000066> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix nidm_hasAlternativeHypothesis: <http://purl.org/nidash/nidm#NIDM_0000097> .
+@prefix nidm_HeightThreshold: <http://purl.org/nidash/nidm#NIDM_0000034> .
+@prefix nidm_targetIntensity: <http://purl.org/nidash/nidm#NIDM_0000124> .
+@prefix nidm_CoordinateSpace: <http://purl.org/nidash/nidm#NIDM_0000016> .
+@prefix spm_smallestSignificantClusterSizeInVoxelsFDR05: <http://purl.org/nidash/spm#SPM_0000013> .
+@prefix fsl: <http://purl.org/nidash/fsl#> .
+@prefix nidm_DesignMatrix: <http://purl.org/nidash/nidm#NIDM_0000019> .
+@prefix nidm_clusterSizeInResels: <http://purl.org/nidash/nidm#NIDM_0000156> .
+@prefix nidm_errorVarianceHomogeneous: <http://purl.org/nidash/nidm#NIDM_0000094> .
+@prefix xsd_1: <http://www.w3.org/2001/XMLSchema##> .
+@prefix neurolex: <http://neurolex.org/wiki/> .
+@prefix nidm_NIDMResultsExport: <http://purl.org/nidash/nidm#NIDM_0000166> .
+@prefix nidm_maxNumberOfPeaksPerCluster: <http://purl.org/nidash/nidm#NIDM_0000108> .
+@prefix nidm_pValue: <http://purl.org/nidash/nidm#NIDM_0000114> .
+@prefix nidm_ExcursionSetMap: <http://purl.org/nidash/nidm#NIDM_0000025> .
+@prefix spm: <http://purl.org/nidash/spm#> .
+@prefix nidm_expectedNumberOfClusters: <http://purl.org/nidash/nidm#NIDM_0000141> .
+@prefix nidm_searchVolumeInVoxels: <http://purl.org/nidash/nidm#NIDM_0000121> .
+@prefix nidm_qValueFDR: <http://purl.org/nidash/nidm#NIDM_0000119> .
+@prefix niiri: <http://iri.nidash.org/> .
+@prefix nidm_ContrastEstimation: <http://purl.org/nidash/nidm#NIDM_0000001> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nidm_reselSizeInVoxels: <http://purl.org/nidash/nidm#NIDM_0000148> .
+@prefix nidm_ContrastMap: <http://purl.org/nidash/nidm#NIDM_0000002> .
+@prefix nidm_pValueFWER: <http://purl.org/nidash/nidm#NIDM_0000115> .
+@prefix nidm_noiseFWHMInUnits: <http://purl.org/nidash/nidm#NIDM_0000157> .
+@prefix nidm_SupraThresholdCluster: <http://purl.org/nidash/nidm#NIDM_0000070> .
+@prefix nidm_hasErrorDependence: <http://purl.org/nidash/nidm#NIDM_0000100> .
+@prefix obo_contrastweightmatrix: <http://purl.obolibrary.org/obo/STATO_0000323> .
+@prefix nidm_clusterLabelId: <http://purl.org/nidash/nidm#NIDM_0000082> .
+@prefix nidm_ReselsPerVoxelMap: <http://purl.org/nidash/nidm#NIDM_0000144> .
+@prefix nidm_voxel18connected: <http://purl.org/nidash/nidm#NIDM_0000128> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix nidm_Coordinate: <http://purl.org/nidash/nidm#NIDM_0000015> .
+@prefix nidm_searchVolumeInResels: <http://purl.org/nidash/nidm#NIDM_0000149> .
+@prefix nidm_OneTailedTest: <http://purl.org/nidash/nidm#NIDM_0000060> .
+@prefix nidm_MaskMap: <http://purl.org/nidash/nidm#NIDM_0000054> .
+@prefix nidm_voxelSize: <http://purl.org/nidash/nidm#NIDM_0000131> .
+@prefix obo_ordinaryleastsquaresestimation: <http://purl.obolibrary.org/obo/STATO_0000370> .
+@prefix nidm_GrandMeanMap: <http://purl.org/nidash/nidm#NIDM_0000033> .
+@prefix nidm_MNICoordinateSystem: <http://purl.org/nidash/nidm#NIDM_0000051> .
+@prefix nidm_IndependentError: <http://purl.org/nidash/nidm#NIDM_0000048> .
+@prefix nidm_IndependentParameter: <http://purl.org/nidash/nidm#NIDM_0000073> .
+@prefix nidm_randomFieldStationarity: <http://purl.org/nidash/nidm#NIDM_0000120> .
+@prefix obo_normaldistribution: <http://purl.obolibrary.org/obo/STATO_0000227> .
+@prefix nidm_voxelUnits: <http://purl.org/nidash/nidm#NIDM_0000133> .
+@prefix nidm_varianceMapWiseDependence: <http://purl.org/nidash/nidm#NIDM_0000126> .
+@prefix nidm_ErrorModel: <http://purl.org/nidash/nidm#NIDM_0000023> .
+@prefix nidm_maskedMedian: <http://purl.org/nidash/nidm#NIDM_0000107> .
+@prefix nidm_hasErrorDistribution: <http://purl.org/nidash/nidm#NIDM_0000101> .
+@prefix nidm_ClusterDefinitionCriteria: <http://purl.org/nidash/nidm#NIDM_0000007> .
+@prefix spm_searchVolumeReselsGeometry: <http://purl.org/nidash/spm#SPM_0000010> .
+
+
+niiri:contrast_estimation_id_2 prov:wasAssociatedWith niiri:software_id .
+
+niiri:inference_id_3 prov:wasAssociatedWith niiri:software_id .
+
+niiri:inference_id_2 prov:wasAssociatedWith niiri:software_id .
+
+niiri:contrast_estimation_id prov:wasAssociatedWith niiri:software_id .
+
+niiri:model_pe_id prov:wasAssociatedWith niiri:software_id .
+
+niiri:inference_id prov:wasAssociatedWith niiri:software_id .
+
+niiri:export_id prov:wasAssociatedWith niiri:exporter_id .
+
+niiri:supra_threshold_cluster_0004 prov:wasDerivedFrom niiri:excursion_set_map_id .
+
+niiri:supra_threshold_cluster_0005 prov:wasDerivedFrom niiri:excursion_set_map_id .
+
+niiri:statistic_map_id_2 prov:wasDerivedFrom niiri:statistic_map_id_2_der .
+
+niiri:beta_map_id_2 prov:wasDerivedFrom niiri:beta_map_id_2_der .
+
+niiri:statistic_map_id prov:wasDerivedFrom niiri:statistic_map_id_der .
+
+niiri:peak_0002 prov:wasDerivedFrom niiri:supra_threshold_cluster_0001 .
+
+niiri:peak_0004 prov:wasDerivedFrom niiri:supra_threshold_cluster_0002 .
+
+niiri:peak_0001 prov:wasDerivedFrom niiri:supra_threshold_cluster_0001 .
+
+niiri:peak_0003 prov:wasDerivedFrom niiri:supra_threshold_cluster_0001 .
+
+niiri:supra_threshold_cluster_0001 prov:wasDerivedFrom niiri:excursion_set_map_id .
+
+niiri:beta_map_id_1 prov:wasDerivedFrom niiri:beta_map_id_1_der .
+
+niiri:resels_per_voxel_map_id prov:wasDerivedFrom niiri:resels_per_voxel_map_id_der .
+
+niiri:supra_threshold_cluster_0003 prov:wasDerivedFrom niiri:excursion_set_map_id .
+
+niiri:contrast_map_id prov:wasDerivedFrom niiri:contrast_map_id_der .
+
+niiri:beta_map_id_3 prov:wasDerivedFrom niiri:beta_map_id_3_der .
+
+niiri:supra_threshold_cluster_0002 prov:wasDerivedFrom niiri:excursion_set_map_id .
+
+niiri:contrast_map_id_2 prov:wasDerivedFrom niiri:contrast_map_id_2_der .
+
+niiri:model_pe_id prov:used niiri:design_matrix_id , niiri:data_id .
+
+niiri:inference_id_2 prov:used niiri:statistic_map_id_2 .
+
+niiri:inference_id_3 prov:used niiri:resels_per_voxel_map_id .
+
+niiri:contrast_estimation_id_2 prov:used niiri:contrast_id_2 .
+
+niiri:inference_id prov:used niiri:mask_id_1 , niiri:resels_per_voxel_map_id .
+
+niiri:model_pe_id prov:used niiri:error_model_id .
+
+niiri:contrast_estimation_id_2 prov:used niiri:beta_map_id_3 .
+
+niiri:contrast_estimation_id prov:used niiri:beta_map_id_1 .
+
+niiri:inference_id_3 prov:used niiri:display_map_id_3 , niiri:statistic_map_id_2 .
+
+niiri:contrast_estimation_id prov:used niiri:beta_map_id_2 .
+
+niiri:inference_id_3 prov:used niiri:peak_definition_criteria_id_3 .
+
+niiri:contrast_estimation_id prov:used niiri:residual_mean_squares_map_id , niiri:mask_id_1 , niiri:contrast_id , niiri:design_matrix_id .
+
+niiri:inference_id prov:used niiri:height_threshold_id_1_1 , niiri:cluster_definition_criteria_id , niiri:peak_definition_criteria_id .
+
+niiri:inference_id_3 prov:used niiri:mask_id_1 .
+
+niiri:contrast_estimation_id_2 prov:used niiri:mask_id_1 , niiri:residual_mean_squares_map_id , niiri:design_matrix_id .
+
+niiri:inference_id prov:used niiri:extent_threshold_id_1_1 .
+
+niiri:inference_id_3 prov:used niiri:cluster_definition_criteria_id_3 .
+
+niiri:inference_id_2 prov:used niiri:extent_threshold_id_1_2 .
+
+niiri:inference_id_3 prov:used niiri:extent_threshold_id_3 , niiri:statistic_map_id .
+
+niiri:inference_id_2 prov:used niiri:height_threshold_id_1_2 , niiri:mask_id_1 .
+
+niiri:inference_id prov:used niiri:statistic_map_id .
+
+niiri:inference_id_2 prov:used niiri:cluster_definition_criteria_id_2 .
+
+niiri:inference_id_3 prov:used niiri:height_threshold_id_3 .
+
+niiri:inference_id_2 prov:used niiri:resels_per_voxel_map_id , niiri:peak_definition_criteria_id_2 .
+
+niiri:data_id prov:wasAttributedTo niiri:mr_scanner_id .
+
+niiri:software_id a prov:Agent , src:SCR_007037 , prov:SoftwareAgent ;
+	rdfs:label "SPM" ;
+	nidm:NIDM_0000122 "12b.5853"^^pre_1:string .
+
+niiri:exporter_id a prov:Agent , nidm:NIDM_0000168 , prov:SoftwareAgent ;
+	rdfs:label "spm_results_nidm" ;
+	nidm:NIDM_0000122 "12b.5858"^^pre_1:string .
+
+niiri:peak_0002 a prov:Entity , nidm:NIDM_0000062 ;
+	rdfs:label "Peak: 0002" ;
+	prov:atLocation niiri:coordinate_0002 ;
+	prov:value "13.0321407318"^^pre_1:float ;
+	nidm:NIDM_0000119 "1.19156591714e-11"^^pre_1:float ;
+	nidm:NIDM_0000092 "INF"^^pre_1:float ;
+	nidm:NIDM_0000115 "0"^^pre_1:float ;
+	nidm:NIDM_0000116 "4.44089209850063e-16"^^pre_1:float .
+
+niiri:peak_0003 a prov:Entity , nidm:NIDM_0000062 ;
+	rdfs:label "Peak: 0003" ;
+	prov:atLocation niiri:coordinate_0003 ;
+	prov:value "10.2856016159058"^^pre_1:float ;
+	nidm:NIDM_0000119 "6.84121260274992e-10"^^pre_1:float ;
+	nidm:NIDM_0000092 "INF"^^pre_1:float ;
+	nidm:NIDM_0000115 "7.69451169446711e-12"^^pre_1:float ;
+	nidm:NIDM_0000116 "4.44089209850063e-16"^^pre_1:float .
+
+niiri:contrast_id a prov:Entity , obo:STATO_0000323 ;
+	rdfs:label "Contrast: listening > reading" ;
+	prov:value "[1, -1, 0, 0]"^^pre_1:string ;
+	nidm:NIDM_0000123 obo:STATO_0000176 ;
+	nidm:NIDM_0000085 "listening > reading"^^pre_1:string .
+
+niiri:design_matrix_png_id a prov:Entity , dctype:Image ;
+	prov:atLocation "DesignMatrix.png"^^pre_1:anyURI ;
+	nfo:fileName "DesignMatrix.png"^^pre_1:string ;
+	dct:format "image/png"^^pre_1:string .
+
+niiri:beta_map_id_2 a prov:Entity , nidm:NIDM_0000061 ;
+	rdfs:label "Beta Map 2" ;
+	prov:atLocation "ParameterEstimate_0002.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ParameterEstimate_0002.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:peak_0004 a prov:Entity , nidm:NIDM_0000062 ;
+	rdfs:label "Peak: 0004" ;
+	prov:atLocation niiri:coordinate_0004 ;
+	prov:value "13.5425577163696"^^pre_1:float ;
+	nidm:NIDM_0000119 "1.19156591713838e-11"^^pre_1:float ;
+	nidm:NIDM_0000092 "INF"^^pre_1:float ;
+	nidm:NIDM_0000115 "0"^^pre_1:float ;
+	nidm:NIDM_0000116 "4.44089209850063e-16"^^pre_1:float .
+
+niiri:cluster_definition_criteria_id_2 a prov:Entity , nidm:NIDM_0000007 ;
+	rdfs:label "Cluster Connectivity Criterion: 18" ;
+	nidm:NIDM_0000099 nidm:NIDM_0000128 .
+
+niiri:cluster_definition_criteria_id_3 a prov:Entity , nidm:NIDM_0000007 ;
+	rdfs:label "Cluster Connectivity Criterion: 18" ;
+	nidm:NIDM_0000099 nidm:NIDM_0000128 .
+
+niiri:residual_mean_squares_map_id a prov:Entity , nidm:NIDM_0000066 ;
+	rdfs:label "Residual Mean Squares Map" ;
+	prov:atLocation "ResidualMeanSquares.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ResidualMeanSquares.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:data_id a prov:Entity , prov:Collection , nidm:Data ;
+	rdfs:label "Data" ;
+	nidm:NIDM_0000124 "100"^^pre_1:float ;
+	nidm:numberOfSubjectsPerGroup "[21, 23]"^^pre_1:string ;
+	nidm:NIDM_0000096 "true"^^pre_1:boolean .
+
+niiri:contrast_standard_error_map_id a prov:Entity , nidm:NIDM_0000013 ;
+	rdfs:label "Contrast 1 Standard Error Map" ;
+	prov:atLocation "ContrastStandardError_0001.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ContrastStandardError_0001.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_3_2 a prov:Entity , nidm:NIDM_0000034 , nidm:NIDM_0000160 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "2.7772578456986e-06"^^pre_1:float .
+
+niiri:contrast_map_id_der a prov:Entity , nidm:NIDM_0000002 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "con_0001.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:display_map_id_3 a prov:Entity , nidm:NIDM_0000020 ;
+	rdfs:label "Display Mask Map" ;
+	prov:atLocation "DisplayMask.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "DisplayMask.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:peak_0001 a prov:Entity , nidm:NIDM_0000062 ;
+	rdfs:label "Peak: 0001" ;
+	prov:atLocation niiri:coordinate_0001 ;
+	prov:value "17.5207633972168"^^pre_1:float ;
+	nidm:NIDM_0000119 "1.19156591713838e-11"^^pre_1:float ;
+	nidm:NIDM_0000092 "INF"^^pre_1:float ;
+	nidm:NIDM_0000115 "0"^^pre_1:float ;
+	nidm:NIDM_0000116 "4.44089209850063e-16"^^pre_1:float .
+
+niiri:display_map_id_2 a prov:Entity , nidm:NIDM_0000020 ;
+	rdfs:label "Display Mask Map" ;
+	prov:atLocation "DisplayMask.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "DisplayMask.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_12 a prov:Entity , nidm:NIDM_0000034 , obo:STATO_0000039 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "5.23529984739211"^^pre_1:float .
+
+niiri:cluster_definition_criteria_id a prov:Entity , nidm:NIDM_0000007 ;
+	rdfs:label "Cluster Connectivity Criterion: 18" ;
+	nidm:NIDM_0000099 nidm:NIDM_0000128 .
+
+niiri:height_threshold_id_1_2 a prov:Entity , nidm:NIDM_0000034 , obo:OBI_0001265 ;
+	rdfs:label "Height Threshold: p<0.05 (FWE)" ;
+	prov:value "0.0499999999999976"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_3 , niiri:height_threshold_id_2 .
+
+niiri:extent_threshold_id_2_1 a prov:Entity , nidm:NIDM_0000026 , obo:OBI_0001265 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:design_matrix_id a prov:Entity , nidm:NIDM_0000019 ;
+	rdfs:label "Design Matrix" ;
+	prov:atLocation "DesignMatrix.csv"^^pre_1:anyURI ;
+	nfo:fileName "DesignMatrix.csv"^^pre_1:string ;
+	dc:description niiri:design_matrix_png_id ;
+	dct:format "text/csv"^^pre_1:string .
+
+niiri:supra_threshold_cluster_0001 a prov:Entity , nidm:NIDM_0000070 ;
+	rdfs:label "Supra-Threshold Cluster: 0001" ;
+	nidm:NIDM_0000119 "1.77948412240239e-18"^^pre_1:float ;
+	nidm:NIDM_0000156 "6.31265696809113"^^pre_1:float ;
+	nidm:NIDM_0000084 "839"^^pre_1:int ;
+	nidm:NIDM_0000082 "1"^^pre_1:int ;
+	nidm:NIDM_0000115 "0"^^pre_1:float ;
+	nidm:NIDM_0000116 "3.55896824480477e-19"^^pre_1:float .
+
+niiri:height_threshold_id a prov:Entity , nidm:NIDM_0000034 , obo:OBI_0001265 ;
+	rdfs:label "Height Threshold: p<0.05 (FWE)" ;
+	prov:value "0.05"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_13 , niiri:height_threshold_id_12 .
+
+niiri:extent_threshold_id_3_2 a prov:Entity , nidm:NIDM_0000026 , nidm:NIDM_0000160 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:statistic_map_id_der a prov:Entity , nidm:NIDM_0000076 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "spmT_0001.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:search_space_mask_id a prov:Entity , nidm:NIDM_0000068 ;
+	rdfs:label "Search Space Mask Map" ;
+	prov:atLocation "SearchSpaceMask.nii.gz"^^pre_1:anyURI ;
+	nfo:fileName "SearchSpaceMask.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000141 "0.0512932943875478"^^pre_1:float ;
+	nidm:NIDM_0000157 "[ 16.2383695773208, 16.3091687172086, 13.5499997663244 ]"^^pre_1:string ;
+	nidm:NIDM_0000147 "4.85241745689539"^^pre_1:float ;
+	spm:SPM_0000013 "29"^^pre_1:int ;
+	spm:SPM_0000014 "12"^^pre_1:int ;
+	nidm:NIDM_0000149 "467.07642343881"^^pre_1:float ;
+	nidm:NIDM_0000143 "4.02834655908613"^^pre_1:float ;
+	nidm:NIDM_0000159 "[ 5.41278985910694, 5.43638957240286, 4.51666658877481 ]"^^pre_1:string ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nidm:NIDM_0000121 "69306"^^pre_1:int ;
+	nidm:NIDM_0000136 "1871262"^^pre_1:float ;
+	nidm:NIDM_0000120 "true"^^pre_1:boolean ;
+	nidm:NIDM_0000146 "5.7639536857605"^^pre_1:float ;
+	crypto:sha512 "932fd9f0d55e9822748f4a9b35a0a7f0fe442f3e061e2eda48c2617a2938df50ea84deca8de0725641a0105b712a80a0c8931df9bdf3bef788b1041379d00875"^^pre_1:string ;
+	nidm:NIDM_0000148 "132.907586178202"^^pre_1:float ;
+	spm:SPM_0000010 "[7, 42.96312274763, 269.40914815306, 467.07642343881]"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:contrast_map_id_2_der a prov:Entity , nidm:NIDM_0000002 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "con_0002.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:beta_map_id_3_der a prov:Entity , nidm:NIDM_0000061 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "beta_0003.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:beta_map_id_1 a prov:Entity , nidm:NIDM_0000061 ;
+	rdfs:label "Beta Map 1" ;
+	prov:atLocation "ParameterEstimate_0001.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ParameterEstimate_0001.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:resels_per_voxel_map_id a prov:Entity , nidm:NIDM_0000144 ;
+	rdfs:label "Resels per Voxel Map" ;
+	prov:atLocation "ReselsPerVoxel.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ReselsPerVoxel.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:beta_map_id_3 a prov:Entity , nidm:NIDM_0000061 ;
+	rdfs:label "Beta Map 3" ;
+	prov:atLocation "ParameterEstimate_0003.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ParameterEstimate_0003.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_2_1 a prov:Entity , nidm:NIDM_0000034 , obo:STATO_0000039 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "4.85241745689539"^^pre_1:float .
+
+niiri:height_threshold_id_13 a prov:Entity , nidm:NIDM_0000034 , nidm:NIDM_0000160 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "7.62276079258051e-07"^^pre_1:float .
+
+niiri:extent_threshold_id_1_2 a prov:Entity , nidm:NIDM_0000026 , obo:STATO_0000039 ;
+	rdfs:label "Extent Threshold: k>=0" ;
+	nidm:NIDM_0000084 "0"^^pre_1:int ;
+	nidm:NIDM_0000156 "0"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:extent_threshold_id_2 , niiri:extent_threshold_id_3 .
+
+niiri:contrast_standard_error_map_id_2 a prov:Entity , nidm:NIDM_0000013 ;
+	rdfs:label "Contrast 2 Standard Error Map" ;
+	prov:atLocation "ContrastStandardError_0002.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "ContrastStandardError_0002.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:extent_threshold_id_1_1 a prov:Entity , nidm:NIDM_0000026 , obo:STATO_0000039 ;
+	rdfs:label "Extent Threshold: k>=0" ;
+	nidm:NIDM_0000084 "0"^^pre_1:int ;
+	nidm:NIDM_0000156 "0"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:extent_threshold_id_2 , niiri:extent_threshold_id_3 .
+
+niiri:height_threshold_id_32 a prov:Entity , nidm:NIDM_0000034 , obo:STATO_0000039 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "5.23529984739211"^^pre_1:float .
+
+niiri:supra_threshold_cluster_0005 a prov:Entity , nidm:NIDM_0000070 ;
+	rdfs:label "Supra-Threshold Cluster: 0005" ;
+	nidm:NIDM_0000119 "0.0818393184514307"^^pre_1:float ;
+	nidm:NIDM_0000156 "0.0902882999011843"^^pre_1:float ;
+	nidm:NIDM_0000084 "12"^^pre_1:int ;
+	nidm:NIDM_0000082 "5"^^pre_1:int ;
+	nidm:NIDM_0000115 "0.00418900977248904"^^pre_1:float ;
+	nidm:NIDM_0000116 "0.0818393184514307"^^pre_1:float .
+
+niiri:spm_results_id a prov:Entity , nidm:NIDM_0000027 , prov:Bundle ;
+	rdfs:label "NIDM-Results" ;
+	nidm:NIDM_0000127 "1.1.0"^^pre_1:string .
+
+niiri:contrast_map_id a prov:Entity , nidm:NIDM_0000002 ;
+	rdfs:label "Contrast Map: listening > reading" ;
+	prov:atLocation "Contrast_0001.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "Contrast_0001.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000085 "listening > reading"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:mask_id_1 a prov:Entity , nidm:NIDM_0000054 ;
+	rdfs:label "Mask" ;
+	prov:atLocation "Mask.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "Mask.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000106 "false"^^pre_1:boolean ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:extent_threshold_id_23 a prov:Entity , nidm:NIDM_0000026 , nidm:NIDM_0000160 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:extent_threshold_id_2_2 a prov:Entity , nidm:NIDM_0000026 , obo:OBI_0001265 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:extent_threshold_id_3 a prov:Entity , nidm:NIDM_0000026 , obo:STATO_0000039 ;
+	rdfs:label "Extent Threshold: k>=10" ;
+	nidm:NIDM_0000084 "10"^^pre_1:int ;
+	nidm:NIDM_0000156 "3.3"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_13 , niiri:height_threshold_id_12 .
+
+niiri:coordinate_space_id_1 a prov:Entity , nidm:NIDM_0000016 ;
+	rdfs:label "Coordinate space 1" ;
+	nidm:NIDM_0000132 "[[-3, 0, 0, 78],[0, 3, 0, -112],[0, 0, 3, -50],[0, 0, 0, 1]]"^^pre_1:string ;
+	nidm:NIDM_0000133 "[ \"mm\", \"mm\", \"mm\" ]"^^pre_1:string ;
+	nidm:NIDM_0000105 nidm:NIDM_0000051 ;
+	nidm:NIDM_0000131 "[ 3, 3, 3 ]"^^pre_1:string ;
+	nidm:NIDM_0000090 "[ 53, 63, 46 ]"^^pre_1:string ;
+	nidm:NIDM_0000112 "3"^^pre_1:int .
+
+niiri:height_threshold_id_3 a prov:Entity , nidm:NIDM_0000034 , nidm:NIDM_0000160 ;
+	rdfs:label "Height Threshold: p<0.001 (unc)" ;
+	prov:value "7.62276079258051e-07"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_33 , niiri:height_threshold_id_32 .
+
+niiri:grand_mean_map_id a prov:Entity , nidm:NIDM_0000033 ;
+	rdfs:label "Grand Mean Map" ;
+	prov:atLocation "GrandMean.nii.gz"^^pre_1:anyURI ;
+	nfo:fileName "GrandMean.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nidm:NIDM_0000107 "115"^^pre_1:float ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_2_2 a prov:Entity , nidm:NIDM_0000034 , obo:STATO_0000039 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "4.85241745689539"^^pre_1:float .
+
+niiri:peak_definition_criteria_id_2 a prov:Entity , nidm:NIDM_0000063 ;
+	rdfs:label "Peak Definition Criteria" ;
+	nidm:NIDM_0000109 "8.0"^^pre_1:float ;
+	nidm:NIDM_0000108 "3"^^pre_1:int .
+
+niiri:statistic_map_id_2_der a prov:Entity , nidm:NIDM_0000076 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "spmT_0002.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:coordinate_0001 a prov:Entity , nidm:NIDM_0000015 ;
+	rdfs:label "Coordinate: 0001" ;
+	nidm:NIDM_0000086 "[ -60, -25, 11 ]"^^pre_1:string .
+
+niiri:height_threshold_id_23 a prov:Entity , nidm:NIDM_0000034 , obo:OBI_0001265 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "0.05"^^pre_1:float .
+
+niiri:coordinate_0003 a prov:Entity , nidm:NIDM_0000015 ;
+	rdfs:label "Coordinate: 0003" ;
+	nidm:NIDM_0000086 "[ -66, -31, -1 ]"^^pre_1:string .
+
+niiri:coordinate_0002 a prov:Entity , nidm:NIDM_0000015 ;
+	rdfs:label "Coordinate: 0002" ;
+	nidm:NIDM_0000086 "[ -42, -31, 11 ]"^^pre_1:string .
+
+niiri:coordinate_0004 a prov:Entity , nidm:NIDM_0000015 ;
+	rdfs:label "Coordinate: 0004" ;
+	nidm:NIDM_0000086 "[ 63, -13, -4 ]"^^pre_1:string .
+
+niiri:extent_threshold_id_12 a prov:Entity , nidm:NIDM_0000026 , obo:OBI_0001265 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:supra_threshold_cluster_0002 a prov:Entity , nidm:NIDM_0000070 ;
+	rdfs:label "Supra-Threshold Cluster: 0002" ;
+	nidm:NIDM_0000119 "1.33570070658018e-16"^^pre_1:float ;
+	nidm:NIDM_0000156 "5.22919736927692"^^pre_1:float ;
+	nidm:NIDM_0000084 "695"^^pre_1:int ;
+	nidm:NIDM_0000082 "2"^^pre_1:int ;
+	nidm:NIDM_0000115 "0"^^pre_1:float ;
+	nidm:NIDM_0000116 "5.34280282632073e-17"^^pre_1:float .
+
+niiri:supra_threshold_cluster_0003 a prov:Entity , nidm:NIDM_0000070 ;
+	rdfs:label "Supra-Threshold Cluster: 0003" ;
+	nidm:NIDM_0000119 "0.00829922079256674"^^pre_1:float ;
+	nidm:NIDM_0000156 "0.278388924695318"^^pre_1:float ;
+	nidm:NIDM_0000084 "37"^^pre_1:int ;
+	nidm:NIDM_0000082 "3"^^pre_1:int ;
+	nidm:NIDM_0000115 "0.000255384009130943"^^pre_1:float ;
+	nidm:NIDM_0000116 "0.00497953247554004"^^pre_1:float .
+
+niiri:beta_map_id_2_der a prov:Entity , nidm:NIDM_0000061 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "beta_0002.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:excursion_set_map_id a prov:Entity , nidm:NIDM_0000025 ;
+	rdfs:label "Excursion Set Map" ;
+	prov:atLocation "ExcursionSet.nii.gz"^^pre_1:anyURI ;
+	nfo:fileName "ExcursionSet.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	crypto:sha512 "d96b82761c299a66978893cab6034f3f8aed25d0a135636b0ffe79f4cf11becce86ba261f7aeb43717f5d0e47ad0b14cfb0402786251e3f2c507890c83b27652"^^pre_1:string ;
+	nidm:NIDM_0000111 "5"^^pre_1:int ;
+	nidm:NIDM_0000138 niiri:maximum_intensity_projection_id ;
+	nidm:NIDM_0000114 "2.83510681598e-09"^^pre_1:float ;
+	nidm:NIDM_0000098 niiri:cluster_label_map_id ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:display_map_id a prov:Entity , nidm:NIDM_0000020 ;
+	rdfs:label "Display Mask Map" ;
+	prov:atLocation "DisplayMask.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "DisplayMask.nii.gz"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:supra_threshold_cluster_0004 a prov:Entity , nidm:NIDM_0000070 ;
+	rdfs:label "Supra-Threshold Cluster: 0004" ;
+	nidm:NIDM_0000119 "0.0137821290130967"^^pre_1:float ;
+	nidm:NIDM_0000156 "0.218196724761195"^^pre_1:float ;
+	nidm:NIDM_0000084 "29"^^pre_1:int ;
+	nidm:NIDM_0000082 "4"^^pre_1:int ;
+	nidm:NIDM_0000115 "0.000565384750377596"^^pre_1:float ;
+	nidm:NIDM_0000116 "0.0110257032104773"^^pre_1:float .
+
+niiri:statistic_map_id_2 a prov:Entity , nidm:NIDM_0000076 ;
+	rdfs:label "Statistic Map: motor" ;
+	prov:atLocation "TStatistic_0002.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000093 "72.9999999990787"^^pre_1:float ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "TStatistic_0002.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000123 obo:STATO_0000176 ;
+	nidm:NIDM_0000091 "1"^^pre_1:float ;
+	nidm:NIDM_0000085 "motor"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_3_1 a prov:Entity , nidm:NIDM_0000034 , nidm:NIDM_0000160 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "2.7772578456986e-06"^^pre_1:float .
+
+niiri:contrast_map_id_2 a prov:Entity , nidm:NIDM_0000002 ;
+	rdfs:label "Contrast Map: motor" ;
+	prov:atLocation "Contrast_0002.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "Contrast_0002.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000085 "motor"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:height_threshold_id_33 a prov:Entity , nidm:NIDM_0000034 , obo:OBI_0001265 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "0.05"^^pre_1:float .
+
+niiri:extent_threshold_id_3_1 a prov:Entity , nidm:NIDM_0000026 , nidm:NIDM_0000160 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:error_model_id a prov:Entity , nidm:NIDM_0000023 ;
+	nidm:NIDM_0000089 nidm:NIDM_0000073 ;
+	nidm:NIDM_0000126 nidm:NIDM_0000073 ;
+	nidm:NIDM_0000100 nidm:NIDM_0000048 ;
+	nidm:NIDM_0000094 "true"^^pre_1:boolean ;
+	nidm:NIDM_0000101 obo:STATO_0000227 .
+
+niiri:peak_definition_criteria_id_3 a prov:Entity , nidm:NIDM_0000063 ;
+	rdfs:label "Peak Definition Criteria" ;
+	nidm:NIDM_0000109 "8.0"^^pre_1:float ;
+	nidm:NIDM_0000108 "3"^^pre_1:int .
+
+niiri:peak_definition_criteria_id a prov:Entity , nidm:NIDM_0000063 ;
+	rdfs:label "Peak Definition Criteria" ;
+	nidm:NIDM_0000109 "8.0"^^pre_1:float ;
+	nidm:NIDM_0000108 "3"^^pre_1:int .
+
+niiri:extent_threshold_id a prov:Entity , nidm:NIDM_0000026 , obo:STATO_0000039 ;
+	rdfs:label "Extent Threshold: k>=0" ;
+	nidm:NIDM_0000084 "0"^^pre_1:int ;
+	nidm:NIDM_0000156 "0"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_13 , niiri:height_threshold_id_12 .
+
+niiri:extent_threshold_id_33 a prov:Entity , nidm:NIDM_0000026 , nidm:NIDM_0000160 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:extent_threshold_id_32 a prov:Entity , nidm:NIDM_0000026 , obo:OBI_0001265 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:height_threshold_id_1_1 a prov:Entity , nidm:NIDM_0000034 , obo:OBI_0001265 ;
+	rdfs:label "Height Threshold: p<0.05 (FWE)" ;
+	prov:value "0.0499999999999976"^^pre_1:float ;
+	nidm:NIDM_0000161 niiri:height_threshold_id_3 , niiri:height_threshold_id_2 .
+
+niiri:contrast_id_2 a prov:Entity , obo:STATO_0000323 ;
+	rdfs:label "Contrast: motor" ;
+	prov:value "[ 0, 0, 1 ]"^^pre_1:string ;
+	nidm:NIDM_0000123 obo:STATO_0000176 ;
+	nidm:NIDM_0000085 "motor"^^pre_1:string .
+
+niiri:extent_threshold_id_13 a prov:Entity , nidm:NIDM_0000026 , nidm:NIDM_0000160 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:height_threshold_id_22 a prov:Entity , nidm:NIDM_0000034 , obo:STATO_0000039 ;
+	rdfs:label "Height Threshold" ;
+	prov:value "5.23529984739211"^^pre_1:float .
+
+niiri:resels_per_voxel_map_id_der a prov:Entity , nidm:NIDM_0000144 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "RPV.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:beta_map_id_1_der a prov:Entity , nidm:NIDM_0000061 ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	nfo:fileName "beta_0001.nii"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:statistic_map_id a prov:Entity , nidm:NIDM_0000076 ;
+	rdfs:label "Statistic Map: listening > reading" ;
+	prov:atLocation "TStatistic_0001.nii.gz"^^pre_1:anyURI ;
+	nidm:NIDM_0000093 "72.9999999990787"^^pre_1:float ;
+	nidm:NIDM_0000104 niiri:coordinate_space_id_1 ;
+	nfo:fileName "TStatistic_0001.nii.gz"^^pre_1:string ;
+	nidm:NIDM_0000123 obo:STATO_0000176 ;
+	nidm:NIDM_0000091 "1"^^pre_1:float ;
+	nidm:NIDM_0000085 "listening > reading"^^pre_1:string ;
+	crypto:sha512 "e43b6e01b0463fe7d40782137867a"^^pre_1:string ;
+	dct:format "image/nifti"^^pre_1:string .
+
+niiri:extent_threshold_id_22 a prov:Entity , nidm:NIDM_0000026 , obo:OBI_0001265 ;
+	rdfs:label "Extent Threshold" ;
+	prov:value "1"^^pre_1:float .
+
+niiri:model_pe_id a prov:Activity , nidm:NIDM_0000056 ;
+	rdfs:label "Model parameters estimation" ;
+	nidm:NIDM_0000134 obo:STATO_0000370 .
+
+niiri:inference_id_3 a prov:Activity , nidm:NIDM_0000011 ;
+	rdfs:label "Conjunction Inference 3" ;
+	nidm:NIDM_0000097 nidm:NIDM_0000060 .
+
+niiri:inference_id_2 a prov:Activity , nidm:NIDM_0000049 ;
+	rdfs:label "Inference 2" ;
+	nidm:NIDM_0000097 nidm:NIDM_0000060 .
+
+niiri:export_id a prov:Activity , nidm:NIDM_0000166 ;
+	rdfs:label "NIDM-Results export" .
+
+niiri:inference_id a prov:Activity , nidm:NIDM_0000049 ;
+	rdfs:label "Inference 1" ;
+	nidm:NIDM_0000097 nidm:NIDM_0000060 .
+
+niiri:contrast_estimation_id_2 a prov:Activity , nidm:NIDM_0000001 ;
+	rdfs:label "Contrast estimation 2" .
+
+niiri:contrast_estimation_id a prov:Activity , nidm:NIDM_0000001 ;
+	rdfs:label "Contrast estimation 1" .
+
+niiri:resels_per_voxel_map_id prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:statistic_map_id_2 prov:wasGeneratedBy niiri:contrast_estimation_id_2 .
+
+niiri:beta_map_id_1 prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:statistic_map_id prov:wasGeneratedBy niiri:contrast_estimation_id .
+
+niiri:mask_id_1 prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:contrast_standard_error_map_id prov:wasGeneratedBy niiri:contrast_estimation_id .
+
+niiri:contrast_standard_error_map_id_2 prov:wasGeneratedBy niiri:contrast_estimation_id_2 .
+
+niiri:residual_mean_squares_map_id prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:contrast_map_id prov:wasGeneratedBy niiri:contrast_estimation_id .
+
+niiri:excursion_set_map_id prov:wasGeneratedBy niiri:inference_id .
+
+niiri:search_space_mask_id prov:wasGeneratedBy niiri:inference_id .
+
+_:blank1 a prov:Generation ;
+	prov:activity niiri:export_id .
+
+niiri:spm_results_id prov:qualifiedGeneration _:blank1 .
+
+_:blank1 prov:atTime "2014-05-19T10:30:00.000+01:00"^^pre_1:dateTime .
+
+niiri:beta_map_id_2 prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:beta_map_id_3 prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:grand_mean_map_id prov:wasGeneratedBy niiri:model_pe_id .
+
+niiri:contrast_map_id_2 prov:wasGeneratedBy niiri:contrast_estimation_id_2 .

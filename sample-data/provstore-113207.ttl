@@ -1,0 +1,30 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix nlx: <http://neurolex.org/wiki/> .
+@prefix bnode: <http://openprovenance.org/provtoolbox/bnode/> .
+@prefix niiri: <http://iri.nidash.org/> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix nidm_ModelParametersEstimation: <http://purl.org/nidash/nidm#NIDM_0000056> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix pre_1: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fsl: <http://purl.org/nidash/fsl#> .
+@prefix nidm_DesignMatrix: <http://purl.org/nidash/nidm#NIDM_0000019> .
+@prefix pre_0: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix spm: <http://purl.org/nidash/spm#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix crypto: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd_1: <http://www.w3.org/2001/XMLSchema##> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+niiri:model_parameter_estimation_id prov:used niiri:design_matrix_id ;
+	a prov:Activity , nidm:NIDM_0000056 .
+
+niiri:design_matrix_id a prov:Entity , nidm:NIDM_0000019 ;
+	rdfs:label "Design Matrix" ;
+	prov:atLocation "DesignMatrix.csv"^^pre_1:anyURI ;
+	nfo:fileName "DesignMatrix.csv"^^pre_1:string ;
+	dc:description niiri:design_matrix_png_id ;
+	dct:format "text/csv"^^pre_1:string .

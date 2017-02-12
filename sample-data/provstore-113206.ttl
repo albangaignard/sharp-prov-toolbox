@@ -1,0 +1,160 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ao: <https://provenance.ecs.soton.ac.uk/atomicorchid/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/uav_verification/1411560570.812> prov:wasAssociatedWith <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav_silver_commander> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/confirmed_plans/166> prov:hadMember <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.2> , <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1761> prov:used <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/uav_verification/1411560570.812> prov:used <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1762> prov:used <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav/target/9.2> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav_silver_commander> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/2> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter3> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/64> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/33> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/CrowdScanner> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/CrowdScanner> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/16> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter3> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/43> prov:wasAttributedTo <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav_silver_commander> a prov:Agent , prov:Person .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter2> a prov:Agent , prov:Person , ao:CrowdReporter .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter3> a prov:Agent , prov:Person , ao:CrowdReporter .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/CrowdScanner> a prov:Agent , ao:IBCCAlgo , prov:SoftwareAgent .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/agent/crowdreporter1> a prov:Agent , prov:Person , ao:CrowdReporter .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.2> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/medic273.2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.1> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/medic273.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> a prov:Entity ;
+	ao:longitude "18.5396"^^xsd:double ;
+	ao:latitude "-72.3348"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> a prov:Entity ;
+	ao:longitude "18.5396"^^xsd:double ;
+	ao:latitude "-72.336"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9> a prov:Entity .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.2> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/transporter272.2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/confirmed_plans/166> a prov:Entity , ao:Plan .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav/target/9.2> a prov:Entity ;
+	ao:asset_type ao:InfrastructureDamage .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/16> a prov:Entity ;
+	ao:report "Looking for the following person"^^xsd:string ;
+	ao:latitude "221.0"^^xsd:double ;
+	ao:longitude "283.0"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/33> a prov:Entity ;
+	ao:report "Ministry of Justice/Palais de Justice building destroyed"^^xsd:string ;
+	ao:latitude "220.0"^^xsd:double ;
+	ao:longitude "283.0"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/medic273.2> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761> a prov:Entity , ao:Instruction .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762> a prov:Entity , ao:Instruction .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/transporter272.2> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/64> a prov:Entity ;
+	ao:report "lelenne cesar..... works in l'opital general."^^xsd:string ;
+	ao:latitude "221.0"^^xsd:double ;
+	ao:longitude "283.0"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.1> a prov:Entity ;
+	ao:accepted <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/transporter272.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/43> a prov:Entity ;
+	ao:report "vladimir jean guismy devariste"^^xsd:string ;
+	ao:latitude "220.0"^^xsd:double ;
+	ao:longitude "283.0"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/2> a prov:Entity ;
+	ao:report "Collapsed Building -- People Trapped"^^xsd:string ;
+	ao:latitude "220.0"^^xsd:double ;
+	ao:longitude "283.0"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/InfrastructureDamage529> a prov:Entity , ao:InfrastructureDamage ;
+	ao:asset_status ao:asset_idle ;
+	ao:longitude "-72.294"^^xsd:double ;
+	ao:latitude "18.5372"^^xsd:double .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1762> a prov:Activity ;
+	prov:startedAtTime "2014-09-24T13:06:00.646+01:00"^^xsd:dateTime ;
+	prov:endedAtTime "2014-09-24T13:06:00.646+01:00"^^xsd:dateTime .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/uav_verification/1411560570.812> a prov:Activity ;
+	prov:endedAtTime "2014-09-24T13:09:30.812+01:00"^^xsd:dateTime .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1761> a prov:Activity ;
+	prov:startedAtTime "2014-09-24T13:06:00.646+01:00"^^xsd:dateTime ;
+	prov:endedAtTime "2014-09-24T13:06:00.646+01:00"^^xsd:dateTime .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.2> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.2> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.1> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.1> prov:specializationOf <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/InfrastructureDamage529> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> , <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/16> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/33> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/64> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav/target/9.2> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.1> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/InfrastructureDamage529> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav/target/9.2> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/target/9.0> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/cs/report/43> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761> prov:wasDerivedFrom <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/InfrastructureDamage529> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1761.2> prov:wasGeneratedBy <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1761> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/medic273.2> prov:wasGeneratedBy <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1762> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/instructions/InfrastructureDamage529-1762.2> prov:wasGeneratedBy <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1762> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/uav/target/9.2> prov:wasGeneratedBy <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/uav_verification/1411560570.812> .
+
+<https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/transporter272.2> prov:wasGeneratedBy <https://provenance.ecs.soton.ac.uk/atomicorchid/data/35/activity/AcceptInstruction1761> .

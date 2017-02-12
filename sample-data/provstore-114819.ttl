@@ -1,0 +1,289 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix crypto: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fsl: <http://purl.org/nidash/fsl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix niiri: <http://iri.nidash.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+niiri:eff78daa-eb10-4445-ad24-e08125b56b99 prov:wasAssociatedWith niiri:c62b3524-3d9a-4004-9423-1004389aef0b .
+
+niiri:c62b3524-3d9a-4004-9423-1004389aef0b a prov:Agent , nidm:NIDM_0000167 , prov:SoftwareAgent ;
+	rdfs:label "nidmfsl" ;
+	nidm:NIDM_0000122 "1.1.0"^^xsd:string .
+
+niiri:376e33fd-3215-4107-aefe-b81d4e7b07e2 a prov:Entity , nidm:NIDM_0000027 , prov:Bundle ;
+	rdfs:label "NIDM-Results" ;
+	nidm:NIDM_0000127 "1.3.0"^^xsd:string .
+
+niiri:eff78daa-eb10-4445-ad24-e08125b56b99 a prov:Activity ;
+	rdfs:label "NIDM-Results export" .
+
+_:blank1 a prov:Generation ;
+	prov:activity niiri:eff78daa-eb10-4445-ad24-e08125b56b99 .
+
+niiri:376e33fd-3215-4107-aefe-b81d4e7b07e2 prov:qualifiedGeneration _:blank1 .
+
+_:blank1 prov:atTime "2016-10-17T11:58:44.755+01:00"^^xsd:dateTime .
+
+niiri:70547e03-02d8-4042-a58d-a176807e04ef prov:wasAssociatedWith niiri:5e9dbc1f-1ec4-4ba1-947d-2addc1dfa54d .
+
+niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 prov:wasAssociatedWith niiri:5e9dbc1f-1ec4-4ba1-947d-2addc1dfa54d .
+
+niiri:92b56682-218f-4ca9-94d4-ff580445e759 prov:wasAssociatedWith niiri:5e9dbc1f-1ec4-4ba1-947d-2addc1dfa54d .
+
+niiri:b4043447-fb53-4cfa-839c-c0731b81a852 prov:wasDerivedFrom niiri:82e23499-dd4e-497d-9864-f0d8e94d665c .
+
+niiri:92b56682-218f-4ca9-94d4-ff580445e759 prov:used niiri:57626bea-c18f-4713-9406-93c6d058173a , niiri:90e32a81-daab-409c-b8c8-700df165fb8e , niiri:4e69ceed-a675-4de6-8680-3ea0d510b75f .
+
+niiri:70547e03-02d8-4042-a58d-a176807e04ef prov:used niiri:d64acc89-9b21-4ee7-b921-205ae292adc6 .
+
+niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 prov:used niiri:af5ef00a-8e43-4ffc-9d8e-b0ba2aa39dfe .
+
+niiri:70547e03-02d8-4042-a58d-a176807e04ef prov:used niiri:091deb7e-ee87-4163-9481-8b68e7b05e51 , niiri:39be7cce-e2ec-422f-8c0d-fb7f271d03fe .
+
+niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 prov:used niiri:e1d5ae7d-f943-4352-8348-88e5b6576768 , niiri:56089da4-7171-4151-b67b-1e082e6d4241 .
+
+niiri:39be7cce-e2ec-422f-8c0d-fb7f271d03fe prov:wasAttributedTo niiri:fdd88182-38f8-45a9-8800-db9b686cb02a , niiri:89b585b8-bacd-4352-afe5-80bd84427bc4 .
+
+niiri:89b585b8-bacd-4352-afe5-80bd84427bc4 a prov:Agent , <http://uri.neuinfo.org/nif/nifstd/birnlex_2100> ;
+	rdfs:label "MRI Scanner" .
+
+niiri:5e9dbc1f-1ec4-4ba1-947d-2addc1dfa54d a prov:Agent , <http://scicrunch.org/resolver/SCR_002823> , prov:SoftwareAgent ;
+	rdfs:label "FSL" ;
+	nidm:NIDM_0000122 "5.0.x"^^xsd:string ;
+	fsl:FSL_0000005 "6.0"^^xsd:double .
+
+niiri:fdd88182-38f8-45a9-8800-db9b686cb02a a prov:Agent ;
+	rdfs:label "Person" .
+
+niiri:57626bea-c18f-4713-9406-93c6d058173a a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ResidualMeanSquares.nii.gz"^^xsd:string ;
+	prov:atLocation "ResidualMeanSquares.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "61d38cc67f56974aabcb7b4aaf32868cb0a3f7a4b3ec2d2bf867d889907073ad0ea6aa51e419f6e4dedd6659d56eff879c9ed17e4da903807ed7fce4a2d6efbb"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000066 ;
+	rdfs:label "Residual Mean Squares Map" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:d2e9df05-1d9a-4097-9c23-5e7e963a4dbb a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "Contrast.nii.gz"^^xsd:string ;
+	prov:atLocation "Contrast.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "f2df3de73c023be1d8d1f73703e3ffdbf08b69a27ae304cdf053e8639da9e579fd21a52a66584e04c865239f408bd30d7b5e690985ce7a20ccd2a50c3306fd55"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000002 ;
+	rdfs:label "Contrast Map: tone counting vs baseline" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb ;
+	nidm:NIDM_0000085 "tone counting vs baseline"^^xsd:string .
+
+niiri:e3041e86-433e-4876-b124-d1fdfa2a2fe3 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ClusterLabels.nii.gz"^^xsd:string ;
+	prov:atLocation "ClusterLabels.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "8d5e00e26766e3c836724f32e4cbaf0a1cd7cee6453883e7a57d253d56cd81e5eb93841bce0c4c39e905d5b3c0bd05954ea7bd5b20f0d84c2ac70478f6571ea7"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000008 ;
+	rdfs:label "Cluster Labels Map" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:90e32a81-daab-409c-b8c8-700df165fb8e a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "pe1.nii.gz"^^xsd:string ;
+	crypto:sha512 "f2df3de73c023be1d8d1f73703e3ffdbf08b69a27ae304cdf053e8639da9e579fd21a52a66584e04c865239f408bd30d7b5e690985ce7a20ccd2a50c3306fd55"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000061 ;
+	rdfs:label "Parameter estimate 1" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:4e69ceed-a675-4de6-8680-3ea0d510b75f a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "Mask.nii.gz"^^xsd:string ;
+	prov:atLocation "Mask.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "d092708a9c256b3573fbe1a932f4998af141739de2ac94ca58d57af814dde086a15f49b09093ac57041123c716d195f08ebc3e2fd0bec12832068154e1816b0e"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000054 ;
+	rdfs:label "Mask" ;
+	nidm:NIDM_0000106 "false"^^xsd:boolean ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:8272cb6c-eb57-44e5-8faa-97be8d371a77 a prov:Entity , <http://purl.obolibrary.org/obo/STATO_0000323> ;
+	rdfs:label "Contrast Weights: tone counting vs baseline" ;
+	prov:value "[1, 0]"^^xsd:string ;
+	nidm:NIDM_0000123 <http://purl.obolibrary.org/obo/STATO_0000176> ;
+	nidm:NIDM_0000085 "tone counting vs baseline"^^xsd:string .
+
+niiri:f8ed0bc6-18bc-48d4-be11-0544670bbbab a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ExcursionSet.nii.gz"^^xsd:string ;
+	prov:atLocation "ExcursionSet.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "d20b80683d8cf569e6c146bc4fe44506567004f1c0bf9b3571fa99e76e4f009146938a2b0b051198a46dbf7a6cd8d9701a20cf8eebe2e8f061216c1d772bb83e"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000025 ;
+	rdfs:label "Excursion Set Map" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb ;
+	<http://purl.org/dc/elements/1.1/description> niiri:b87d77ec-ed24-458d-99c7-5fbfeabad3a0 ;
+	nidm:NIDM_0000098 niiri:e3041e86-433e-4876-b124-d1fdfa2a2fe3 .
+
+niiri:6d2f7905-fe70-443e-bd97-17b578dd2437 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "DesignMatrix.png"^^xsd:string ;
+	prov:atLocation "DesignMatrix.png"^^xsd:anyURI ;
+	a <http://purl.org/dc/dcmitype/Image> ;
+	dct:format "image/png"^^xsd:string .
+
+niiri:82e23499-dd4e-497d-9864-f0d8e94d665c a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "varcope1.nii.gz"^^xsd:string ;
+	crypto:sha512 "32ec7259f2c39d9b242965331145529a1efbfb5b32e133b7e5b93b8ba4d566bf476f0ffac79e9ae0bb49e3db419cc1da9e6f9b7b070194dc1be124bab11a9fc8"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000135 .
+
+niiri:dbe181af-106d-46c9-af91-73252d139dc0 a prov:Entity , fsl:FSL_0000002 ;
+	rdfs:label "FSL's Gaussian Running Line Drift Model" ;
+	fsl:FSL_0000004 "60"^^xsd:float .
+
+niiri:091deb7e-ee87-4163-9481-8b68e7b05e51 a prov:Entity , nidm:NIDM_0000023 ;
+	nidm:NIDM_0000126 nidm:NIDM_0000073 ;
+	nidm:NIDM_0000094 "true"^^xsd:boolean ;
+	nidm:NIDM_0000101 <http://purl.obolibrary.org/obo/STATO_0000227> ;
+	nidm:NIDM_0000100 <http://purl.obolibrary.org/obo/STATO_0000357> ;
+	nidm:NIDM_0000089 nidm:NIDM_0000074 .
+
+niiri:d64acc89-9b21-4ee7-b921-205ae292adc6 a prov:Entity , nidm:NIDM_0000019 ;
+	rdfs:label "Design Matrix" ;
+	prov:atLocation "DesignMatrix.csv"^^xsd:anyURI ;
+	nidm:NIDM_0000021 "[\"tone_counting\", \"tone_counting*temporal_derivative\", \"tone_counting_probe\", \"tone_counting_probe*temporal_derivative\"]"^^xsd:string ;
+	nidm:NIDM_0000102 fsl:FSL_0000006 ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "DesignMatrix.csv"^^xsd:string ;
+	nidm:NIDM_0000088 niiri:dbe181af-106d-46c9-af91-73252d139dc0 ;
+	<http://purl.org/dc/elements/1.1/description> niiri:6d2f7905-fe70-443e-bd97-17b578dd2437 ;
+	dct:format "text/csv"^^xsd:string .
+
+niiri:b87d77ec-ed24-458d-99c7-5fbfeabad3a0 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ExcursionSet.png"^^xsd:string ;
+	prov:atLocation "ExcursionSet.png"^^xsd:anyURI ;
+	a <http://purl.org/dc/dcmitype/Image> ;
+	dct:format "image/png"^^xsd:string .
+
+niiri:39be7cce-e2ec-422f-8c0d-fb7f271d03fe a prov:Entity , prov:Collection , nidm:NIDM_0000169 ;
+	rdfs:label "Data" ;
+	nidm:NIDM_0000096 "true"^^xsd:boolean ;
+	nidm:NIDM_0000124 "10000"^^xsd:float ;
+	nidm:NIDM_0000172 <http://uri.neuinfo.org/nif/nifstd/birnlex_2250> .
+
+niiri:e1d5ae7d-f943-4352-8348-88e5b6576768 a prov:Entity , nidm:NIDM_0000026 , <http://purl.obolibrary.org/obo/STATO_0000039> ;
+	rdfs:label "Extent Threshold: k>=0" ;
+	nidm:NIDM_0000084 "0"^^xsd:int .
+
+niiri:e1053f32-c14e-461a-a6d3-94a38b6fa620 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "pe2.nii.gz"^^xsd:string ;
+	crypto:sha512 "43cd79a08a78b1873136d33e871af5a5bc85ab6e8193b8dfd2c5add4765c91ae502be137dbab45d38f13ddc74d82cf06ecd5ea633841afdd4df589c14be9e345"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000061 ;
+	rdfs:label "Parameter estimate 2" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:29bdd19e-6cfb-4f4c-833c-b70dcad22f39 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "SearchSpaceMask.nii.gz"^^xsd:string ;
+	prov:atLocation "SearchSpaceMask.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "d092708a9c256b3573fbe1a932f4998af141739de2ac94ca58d57af814dde086a15f49b09093ac57041123c716d195f08ebc3e2fd0bec12832068154e1816b0e"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000068 ;
+	rdfs:label "Search Space Mask Map" ;
+	nidm:NIDM_0000157 "[7.30301, 7.28026, 6.07038]"^^xsd:string ;
+	nidm:NIDM_0000145 "0.700797"^^xsd:float ;
+	nidm:NIDM_0000149 "5801"^^xsd:float ;
+	nidm:NIDM_0000148 "6.60989"^^xsd:float ;
+	nidm:NIDM_0000159 "[2.33696, 2.32968, 1.21408]"^^xsd:string ;
+	nidm:NIDM_0000121 "38344"^^xsd:int ;
+	nidm:NIDM_0000120 "true"^^xsd:boolean ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb ;
+	nidm:NIDM_0000136 "1.87227e+06"^^xsd:float .
+
+niiri:8c9313da-ec63-43ab-be79-0b07157f9d93 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "GrandMean.nii.gz"^^xsd:string ;
+	prov:atLocation "GrandMean.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "46d5f0f323c77faec3fd8ec1e608b3d9cb6697528b279bcac746129041a07b1c0af7f3396bc43a41417361b5d9f03b271f8769123111f56fa27e2a8069bdf14d"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000033 ;
+	rdfs:label "Grand Mean Map" ;
+	nidm:NIDM_0000107 "9565.25"^^xsd:float ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb a prov:Entity , nidm:NIDM_0000016 ;
+	rdfs:label "Coordinate space" ;
+	nidm:NIDM_0000132 "[[-3.125, 0.0, 0.0, 100.0], [0.0, 3.125, 0.0, -100.0], [0.0, 0.0, 5.0, -75.0], [0.0, 0.0, 0.0, 1.0]]"^^xsd:string ;
+	nidm:NIDM_0000133 "[\"mm\", \"mm\", \"mm\"]"^^xsd:string ;
+	nidm:NIDM_0000105 nidm:NIDM_0000077 ;
+	nidm:NIDM_0000131 "[3.125, 3.125, 5.0]"^^xsd:string ;
+	nidm:NIDM_0000090 "[64, 64, 30]"^^xsd:string ;
+	nidm:NIDM_0000112 "3"^^xsd:int .
+
+niiri:af5ef00a-8e43-4ffc-9d8e-b0ba2aa39dfe a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ZStatistic.nii.gz"^^xsd:string ;
+	prov:atLocation "ZStatistic.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "07ddd4fabb8409815459be622465fdb1462fcba124be9a521fbd51ea6d03c582dc4cae2b08cdecd0662e19ac958b5c37a58d3da6b6ee05ae212039a31f91056d"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000076 ;
+	rdfs:label "Z-Statistic Map: tone counting vs baseline" ;
+	nidm:NIDM_0000085 "tone counting vs baseline"^^xsd:string ;
+	nidm:NIDM_0000123 <http://purl.obolibrary.org/obo/STATO_0000376> ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb ;
+	nidm:NIDM_0000091 "1"^^xsd:float ;
+	nidm:NIDM_0000093 "inf"^^xsd:float .
+
+niiri:b4043447-fb53-4cfa-839c-c0731b81a852 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "ContrastStandardError.nii.gz"^^xsd:string ;
+	prov:atLocation "ContrastStandardError.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "5f6c299048c1245e76c1c3ea09e6bf78ebf21e7380b2abf6ef8e0ca40723cbbbb731c436e99d458324aaa884cf97e42736f26e46d182ae16640c2ce8db1fdb4c"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000013 ;
+	rdfs:label "Contrast Standard Error Map" ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb .
+
+niiri:0fb2b628-1da0-4d97-8f4c-c9c7b27e1610 a prov:Entity ;
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "TStatistic.nii.gz"^^xsd:string ;
+	prov:atLocation "TStatistic.nii.gz"^^xsd:anyURI ;
+	crypto:sha512 "38649b9e17afa0cbd95002eaffdd81f81d61b06fd8c5f4cf1d614e494d2d3ec3b97e1d808f5a6c92134a506aaa85b19eeefcb9b0a30d68788e9ef02b3e1fcb62"^^xsd:string ;
+	dct:format "image/nifti"^^xsd:string ;
+	a nidm:NIDM_0000076 ;
+	rdfs:label "T-Statistic Map: tone counting vs baseline" ;
+	nidm:NIDM_0000085 "tone counting vs baseline"^^xsd:string ;
+	nidm:NIDM_0000123 <http://purl.obolibrary.org/obo/STATO_0000176> ;
+	nidm:NIDM_0000104 niiri:b31fcf5f-20d9-4b5f-9e13-bcad0c0aa3eb ;
+	nidm:NIDM_0000091 "1"^^xsd:float ;
+	nidm:NIDM_0000093 "102"^^xsd:float .
+
+niiri:56089da4-7171-4151-b67b-1e082e6d4241 a prov:Entity , nidm:NIDM_0000034 , nidm:NIDM_0000160 ;
+	rdfs:label "Height Threshold: p<0.001 (uncorrected)" ;
+	prov:value "0.001"^^xsd:float .
+
+niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 a prov:Activity , nidm:NIDM_0000049 ;
+	rdfs:label "Inference: tone counting vs baseline" ;
+	nidm:NIDM_0000097 nidm:NIDM_0000060 .
+
+niiri:70547e03-02d8-4042-a58d-a176807e04ef a prov:Activity , nidm:NIDM_0000056 ;
+	rdfs:label "Model Parameters Estimation" ;
+	nidm:NIDM_0000134 <http://purl.obolibrary.org/obo/STATO_0000372> .
+
+niiri:92b56682-218f-4ca9-94d4-ff580445e759 a prov:Activity , nidm:NIDM_0000001 ;
+	rdfs:label "Contrast estimation: tone counting vs baseline" .
+
+niiri:e1053f32-c14e-461a-a6d3-94a38b6fa620 prov:wasGeneratedBy niiri:70547e03-02d8-4042-a58d-a176807e04ef .
+
+niiri:8c9313da-ec63-43ab-be79-0b07157f9d93 prov:wasGeneratedBy niiri:70547e03-02d8-4042-a58d-a176807e04ef .
+
+niiri:57626bea-c18f-4713-9406-93c6d058173a prov:wasGeneratedBy niiri:70547e03-02d8-4042-a58d-a176807e04ef .
+
+niiri:d2e9df05-1d9a-4097-9c23-5e7e963a4dbb prov:wasGeneratedBy niiri:92b56682-218f-4ca9-94d4-ff580445e759 .
+
+niiri:af5ef00a-8e43-4ffc-9d8e-b0ba2aa39dfe prov:wasGeneratedBy niiri:92b56682-218f-4ca9-94d4-ff580445e759 .
+
+niiri:f8ed0bc6-18bc-48d4-be11-0544670bbbab prov:wasGeneratedBy niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 .
+
+niiri:90e32a81-daab-409c-b8c8-700df165fb8e prov:wasGeneratedBy niiri:70547e03-02d8-4042-a58d-a176807e04ef .
+
+niiri:0fb2b628-1da0-4d97-8f4c-c9c7b27e1610 prov:wasGeneratedBy niiri:92b56682-218f-4ca9-94d4-ff580445e759 .
+
+niiri:b4043447-fb53-4cfa-839c-c0731b81a852 prov:wasGeneratedBy niiri:92b56682-218f-4ca9-94d4-ff580445e759 .
+
+niiri:4e69ceed-a675-4de6-8680-3ea0d510b75f prov:wasGeneratedBy niiri:70547e03-02d8-4042-a58d-a176807e04ef .
+
+niiri:29bdd19e-6cfb-4f4c-833c-b70dcad22f39 prov:wasGeneratedBy niiri:08785e30-d049-481c-9bd6-5a67ee04d0a6 .
