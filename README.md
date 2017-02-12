@@ -9,13 +9,29 @@ Several ontologies have been proposed to extend the multi-purpose PROV-O ontolog
 **With SHARP, our goal is to propose reasoning mechanisms to produce harmonized provenance graphs, that can be more easily  linked together and shared.**
 
 ## Usage in command line
-SHARP is available as a standalone command line interface. It can be used to infer PROV statements for a single provenance trace : 
+SHARP is available as a standalone command line interface. Here is the description of the command line parameters : 
+
+    usage: SharpTB [-h] [-i <input_file_1> ... <input_file_n>] [-s] [-v]
+    SharpTB is a tool to maturate provenance based on PROV inferences
+         -h,--help                                            print the help
+         -i,--input_files <input_file_1> ... <input_file_n>   The list of PROV
+                                                              input files, in RDF
+                                                              Turtle.
+         -s,--summary                                         Materialization of
+                                                              wasInfluencedBy
+                                                              relations.
+         -v,--version                                         print the version
+                                                              information and exit
+
+It can be used to infer PROV statements for a single provenance trace : 
 
     java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/provstore-114819.ttl -s
     
 Or it can be used to interlink and harmonize cross workflow provenance traces, as demonstrated here : 
 
     java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/galaxy.prov.ttl sample-data/taverna.prov.ttl sample-data/sameas.ttl -s
+    
+Finally, the `-s` option generates a visualization of the resulting provenance graph. In the following screenshot, a workflow partly enacted on Galaxy and Taverna is depicted : 
    
 ## Usage as an API
 The project can be compiled as follows : 
@@ -25,7 +41,7 @@ The project can be compiled as follows :
     
 Then, when this jar is in your classpath, you can benefit from PROV inferences as follows. 
     
-A PROV RDF graph can be loaded with the JENA API : 
+An RDF PROV graph can be loaded with the JENA API : 
     
     String inputGraph = "Your PROV graph in TTL syntax";
     Model data = ModelFactory.createDefaultModel();
@@ -43,5 +59,6 @@ Finally, we povides a basic visualization of the resulting PROV graph, based on 
     Util.writeHtmlViz(res);
 
 ## Maven dependencies 
-
+...
 ## License
+...
