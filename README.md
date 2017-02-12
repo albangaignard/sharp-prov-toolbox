@@ -14,11 +14,12 @@ SHARP is available as a standalone command line interface. It can be used to inf
     java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/provstore-114819.ttl -s
     
 Or it can be used to interlink and harmonize cross workflow provenance traces, as demonstrated here : 
-   
-   java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/galaxy.prov.ttl sample-data/taverna.prov.ttl sample-data/sameas.ttl -s
+
+    java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/galaxy.prov.ttl sample-data/taverna.prov.ttl sample-data/sameas.ttl -s
    
 ## Usage as an API
 The project can be compiled as follows : 
+
     cd Sharp-prov-toolbox
     mvn clean install -Dmaven.test.skip=true
     
