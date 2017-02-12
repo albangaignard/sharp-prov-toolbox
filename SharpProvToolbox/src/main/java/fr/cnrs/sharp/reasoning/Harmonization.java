@@ -36,13 +36,13 @@ public class Harmonization {
     public static File harmonizeProv(File inputProv) throws IOException {
         Model inputGraph = FileManager.get().loadModel(inputProv.getAbsolutePath());
         Model harmonizedProv = harmonizeProv(inputGraph);
-        
+
         Path pathInfProv = Files.createTempFile("PROV-inf-tgd-egd-", ".ttl");
         harmonizedProv.write(new FileWriter(pathInfProv.toFile()), "TTL");
         logger.info("PROV inferences file written to " + pathInfProv.toString());
         return pathInfProv.toFile();
     }
-    
+
     public static Model harmonizeProv(Model inputProvGraph) {
         logger.info("Asserted graph : Graph size / BNodes : " + inputProvGraph.size() + "/" + Unification.countBN(inputProvGraph));
 //        Util.dumpPredStats(inputProvGraph);
@@ -78,7 +78,7 @@ public class Harmonization {
             }
         }
 
-        logger.info("OWL+TGD+EGD : Graph size / BNodes : " + harmonizedModel.size() + "/" + Unification.countBN(harmonizedModel));
+        logger.info("OWL + PROV inferences + blank nodes unification : Graph size / BNodes : " + harmonizedModel.size() + "/" + Unification.countBN(harmonizedModel));
 //        Util.dumpPredStats(harmonizedModel);
         return harmonizedModel;
     }
