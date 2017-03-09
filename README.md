@@ -61,13 +61,15 @@ Finally, we povides a basic visualization of the resulting PROV graph, based on 
     Util.writeHtmlViz(res);
 
 ## Maven dependencies 
-This software requires the following Java dependencies : 
- - JENA 
- - GSON
- - Jersey
- - Log4J
- - Commons CLI
- - Commons Lang
+This software is built on top of the following Java dependencies : 
+ - JENA (https://jena.apache.org)
+ - GSON (https://github.com/google/gson)
+ - Jersey (https://jersey.java.net)
+ - Log4J (https://logging.apache.org/log4j/2.0/)
+ - Commons CLI (https://commons.apache.org/proper/commons-cli/)
+ - Commons Lang (https://commons.apache.org/proper/commons-lang/)
+ 
+More details can be found in the [pom.xml](SharpProvToolbox/pom.xml) file. 
 
 ## License
 MIT License
