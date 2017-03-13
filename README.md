@@ -8,6 +8,11 @@ Several ontologies have been proposed to extend the multi-purpose PROV-O ontolog
 
 **With SHARP, our goal is to propose reasoning mechanisms to produce harmonized provenance graphs, that can be more easily  linked together and shared.**
 
+## Contributors
+  - Alban Gaignard : alban.gaignard@univ-nantes.fr
+  - Hala Skaf-Molli : hala.skaf@univ-nantes.fr
+  - Khalid Belhajjame : kbelhajj@googlemail.com
+
 ## Usage in command line
 SHARP is available as a standalone command line interface. Here is the description of the command line parameters : 
 
