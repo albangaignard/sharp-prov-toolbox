@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.links line {
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+.links path {
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+.nodes circle {
+  stroke: #333;
+  stroke-width: 1.5px;
+}
+
+</style>
+
+<svg width="960" height="600"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var graph =  {
+ "nodes" : [ 
+	 { "id" : "Z138_ATGCCTAA_L006_R2_006.fastq.gz", "group" : "1" },
+	 { "id" : "NA12878.R1.ab.fastq", "group" : "1" },
+	 { "id" : "http://fr.symetric#be8b37b6be5ef8c0", "group" : "2" },
+	 { "id" : "http://fr.symetric#f88c7248ecce0238", "group" : "2" },
+	 { "id" : "NA12892.R1.fastq", "group" : "1" },
+	 { "id" : "http://fr.symetric#ef96b5881d65cea3", "group" : "2" },
+	 { "id" : "http://fr.symetric#e6135ea9cc8eb06c", "group" : "2" },
+	 { "id" : "Map with BWA-MEM on data 5 and data 7 (mapped reads in BAM format)", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_001.fastq.gz", "group" : "1" },
+	 { "id" : "http://fr.symetric#47a65b9149410122", "group" : "2" },
+	 { "id" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/67b2b04e-6540-47f5-b034-bcc5f18687e9/", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_114.dat", "group" : "1" },
+	 { "id" : "MergeSamFiles on data 15 and data 14: Merged BAM dataset", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_120.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#40f8adb49e6a70ef", "group" : "2" },
+	 { "id" : "NA12891.R1.fastq", "group" : "1" },
+	 { "id" : "http://fr.symetric#d62284ec65dc4807", "group" : "2" },
+	 { "id" : "http://fr.symetric#d2d1d8ad250776a6", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_005.fastq.gz", "group" : "1" },
+	 { "id" : "http://fr.symetric#481a1bd8c4073bb3", "group" : "2" },
+	 { "id" : "http://fr.symetric#f03769116286d120", "group" : "2" },
+	 { "id" : "http://fr.symetric#70a8f3fea55a65e1", "group" : "2" },
+	 { "id" : "MPileup on data 21, data 20, and data 19 (log)", "group" : "1" },
+	 { "id" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_116.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#e0f10bec603285c8", "group" : "2" },
+	 { "id" : "http://fr.symetric#e119fc8b30c02e0c", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_119.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#0721a00306145018", "group" : "2" },
+	 { "id" : "http://fr.symetric#4cad7bb971256547", "group" : "2" },
+	 { "id" : "http://fr.symetric#6434493324409c2d", "group" : "2" },
+	 { "id" : "http://fr.symetric#080c8290ba090d72", "group" : "2" },
+	 { "id" : "http://fr.symetric#235c242fcfa290e0", "group" : "2" },
+	 { "id" : "NA12892.R2.fastq", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_110.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#0ffe9081e1ba5023", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_003.fastq.gz", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_006.fastq.gz", "group" : "1" },
+	 { "id" : "MPileup on data 29, data 28, and data 21", "group" : "1" },
+	 { "id" : "http://fr.symetric#f601b5e70788878f", "group" : "2" },
+	 { "id" : "Processor execution SnpEff", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_108.dat", "group" : "1" },
+	 { "id" : "NA12892", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_002.fastq.gz", "group" : "1" },
+	 { "id" : "NA12891", "group" : "1" },
+	 { "id" : "http://fr.symetric#b8d0b4b9ba962ebc", "group" : "2" },
+	 { "id" : "http://fr.symetric#cf66897b71b0f768", "group" : "2" },
+	 { "id" : "http://fr.symetric#32ce4966f32bd592", "group" : "2" },
+	 { "id" : "http://fr.symetric#82f2af234af81ed8", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_007.fastq.gz", "group" : "1" },
+	 { "id" : "NA12878.R2.ab.fastq", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_112.dat", "group" : "1" },
+	 { "id" : "NA12878.R2.aa.fastq", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_115.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#fc59f0a8badd862c", "group" : "2" },
+	 { "id" : "http://fr.symetric#be57396b57f6b6cc", "group" : "2" },
+	 { "id" : "NA12891.R2.fastq", "group" : "1" },
+	 { "id" : "http://fr.symetric#9030764ea8d5e704", "group" : "2" },
+	 { "id" : "Sort on data 17", "group" : "1" },
+	 { "id" : "Sort on data 16", "group" : "1" },
+	 { "id" : "taverna-prov export of workflow run provenance", "group" : "1" },
+	 { "id" : "Sort on data 18", "group" : "1" },
+	 { "id" : "http://fr.symetric#9dc1dd64e02bb035", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_003.fastq.gz", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_117.dat", "group" : "1" },
+	 { "id" : "http://fr.symetric#a66f369a31395018", "group" : "2" },
+	 { "id" : "http://fr.symetric#9e3da78118ff2007", "group" : "2" },
+	 { "id" : "MPileup on data 29, data 28, and data 21 (log)", "group" : "1" },
+	 { "id" : "PairedSamples", "group" : "1" },
+	 { "id" : "http://fr.symetric#849837c518091895", "group" : "2" },
+	 { "id" : "MPileup on data 21, data 20, and data 19", "group" : "1" },
+	 { "id" : "http://fr.symetric#6e6c14f8e322639f", "group" : "2" },
+	 { "id" : "NA12878.R1", "group" : "1" },
+	 { "id" : "NA12878.R2", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_005.fastq.gz", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_004.fastq.gz", "group" : "1" },
+	 { "id" : "http://fr.symetric#fc9429d7adce4e2c", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_004.fastq.gz", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_121.dat", "group" : "1" },
+	 { "id" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "group" : "2" },
+	 { "id" : "http://fr.symetric#b8c5e0be0730e636", "group" : "2" },
+	 { "id" : "http://fr.symetric#d49c024deb751707", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_118.dat", "group" : "1" },
+	 { "id" : "Map with BWA-MEM on data 1 and data 2 (mapped reads in BAM format)", "group" : "1" },
+	 { "id" : "http://fr.symetric#cf9ae75c5b84a076", "group" : "2" },
+	 { "id" : "http://fr.symetric#73f909a10e5cdc63", "group" : "2" },
+	 { "id" : "http://fr.symetric#5d25964795a51b38", "group" : "2" },
+	 { "id" : "http://fr.symetric#10a59efb7c60327e", "group" : "2" },
+	 { "id" : "GRCh37", "group" : "1" },
+	 { "id" : "Processor execution Filter_Exons", "group" : "1" },
+	 { "id" : "http://fr.symetric#GRCh37", "group" : "2" },
+	 { "id" : "http://fr.symetric#673685fea1baf60a", "group" : "2" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_002.fastq.gz", "group" : "1" },
+	 { "id" : "http://fr.symetric#35fa540f7da2222f", "group" : "2" },
+	 { "id" : "http://fr.symetric#20f38b0908fe3954", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_109.dat", "group" : "1" },
+	 { "id" : "NA12878.R1.aa.fastq", "group" : "1" },
+	 { "id" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "group" : "2" },
+	 { "id" : "Map with BWA-MEM on data 3 and data 4 (mapped reads in BAM format)", "group" : "1" },
+	 { "id" : "http://fr.symetric#12c6d0e45cbe9a0c", "group" : "2" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_111.dat", "group" : "1" },
+	 { "id" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_113.dat", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R1_007.fastq.gz", "group" : "1" },
+	 { "id" : "Z138_ATGCCTAA_L006_R2_001.fastq.gz", "group" : "1" },
+	 { "id" : "http://fr.symetric#fb14bd0e6e67f98a", "group" : "2" },
+	 { "id" : "file:///Users/gaignard-a/Documents/Dev/sharp-prov-toolbox/sample-data/taverna.prov.ttl#taverna-prov-export", "group" : "2" },
+	 { "id" : "Sort on data 27", "group" : "1" },
+	 { "id" : "http://fr.symetric#93247a409271844d", "group" : "2" },
+	 { "id" : "Workflow run of Workflow1", "group" : "1" },
+	 { "id" : "http://fr.symetric#231ad2cb39e26fad", "group" : "2" },
+	 { "id" : "http://fr.symetric#eff70b9c3fba5912", "group" : "2" },
+	 { "id" : "Map with BWA-MEM on data 6 and data 8 (mapped reads in BAM format)", "group" : "1" },
+	 { "id" : "Sort on data 26", "group" : "1" },
+] , 
+ "links" : [ 
+	 {"source" : "http://fr.symetric#e0f10bec603285c8", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e0f10bec603285c8", "target" : "Z138_ATGCCTAA_L006_R1_002.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#e0f10bec603285c8", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_109.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "NA12891", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#ef96b5881d65cea3", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9030764ea8d5e704", "target" : "http://fr.symetric#d49c024deb751707", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9030764ea8d5e704", "target" : "NA12878.R1.aa.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#20f38b0908fe3954", "target" : "http://fr.symetric#673685fea1baf60a", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#20f38b0908fe3954", "target" : "http://fr.symetric#10a59efb7c60327e", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#20f38b0908fe3954", "target" : "Map with BWA-MEM on data 3 and data 4 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "target" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "target" : "MPileup on data 29, data 28, and data 21", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#fb14bd0e6e67f98a", "target" : "http://fr.symetric#73f909a10e5cdc63", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fb14bd0e6e67f98a", "target" : "Map with BWA-MEM on data 1 and data 2 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#fb14bd0e6e67f98a", "target" : "http://fr.symetric#be57396b57f6b6cc", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#93247a409271844d", "target" : "http://fr.symetric#73f909a10e5cdc63", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#93247a409271844d", "target" : "Map with BWA-MEM on data 1 and data 2 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#93247a409271844d", "target" : "http://fr.symetric#be57396b57f6b6cc", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d49c024deb751707", "target" : "NA12878.R2.aa.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#d49c024deb751707", "target" : "http://fr.symetric#d49c024deb751707", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#40f8adb49e6a70ef", "target" : "http://fr.symetric#235c242fcfa290e0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#40f8adb49e6a70ef", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#40f8adb49e6a70ef", "target" : "MPileup on data 21, data 20, and data 19", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#40f8adb49e6a70ef", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#70a8f3fea55a65e1", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#70a8f3fea55a65e1", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_121.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#70a8f3fea55a65e1", "target" : "Z138_ATGCCTAA_L006_R2_007.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#6434493324409c2d", "target" : "http://fr.symetric#0721a00306145018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#6434493324409c2d", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#6434493324409c2d", "target" : "Sort on data 26", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#82f2af234af81ed8", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#82f2af234af81ed8", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#82f2af234af81ed8", "target" : "MPileup on data 29, data 28, and data 21 (log)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#82f2af234af81ed8", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "Z138_ATGCCTAA_L006_R1_006.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_113.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f03769116286d120", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#12c6d0e45cbe9a0c", "target" : "http://fr.symetric#32ce4966f32bd592", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#12c6d0e45cbe9a0c", "target" : "MergeSamFiles on data 15 and data 14: Merged BAM dataset", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#12c6d0e45cbe9a0c", "target" : "http://fr.symetric#fc59f0a8badd862c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc59f0a8badd862c", "target" : "http://fr.symetric#9030764ea8d5e704", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc59f0a8badd862c", "target" : "http://fr.symetric#d49c024deb751707", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc59f0a8badd862c", "target" : "Map with BWA-MEM on data 6 and data 8 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#fc59f0a8badd862c", "target" : "http://fr.symetric#32ce4966f32bd592", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "NA12878.R2", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0ffe9081e1ba5023", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d62284ec65dc4807", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d62284ec65dc4807", "target" : "http://fr.symetric#235c242fcfa290e0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d62284ec65dc4807", "target" : "MPileup on data 21, data 20, and data 19 (log)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#d62284ec65dc4807", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9e3da78118ff2007", "target" : "NA12878.R2.ab.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#0721a00306145018", "target" : "http://fr.symetric#673685fea1baf60a", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0721a00306145018", "target" : "http://fr.symetric#10a59efb7c60327e", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#0721a00306145018", "target" : "Map with BWA-MEM on data 3 and data 4 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#6e6c14f8e322639f", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#6e6c14f8e322639f", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#6e6c14f8e322639f", "target" : "MPileup on data 29, data 28, and data 21", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#6e6c14f8e322639f", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "Z138_ATGCCTAA_L006_R2_006.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#5d25964795a51b38", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_120.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "Z138_ATGCCTAA_L006_R1_005.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#cf66897b71b0f768", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_112.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#73f909a10e5cdc63", "target" : "NA12892.R1.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#be57396b57f6b6cc", "target" : "NA12892.R2.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/67b2b04e-6540-47f5-b034-bcc5f18687e9/", "target" : "Processor execution Filter_Exons", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/67b2b04e-6540-47f5-b034-bcc5f18687e9/", "target" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9dc1dd64e02bb035", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9dc1dd64e02bb035", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#9dc1dd64e02bb035", "target" : "MPileup on data 29, data 28, and data 21", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#9dc1dd64e02bb035", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "file:///Users/gaignard-a/Documents/Dev/sharp-prov-toolbox/sample-data/taverna.prov.ttl#taverna-prov-export", "target" : "taverna-prov export of workflow run provenance", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "file:///Users/gaignard-a/Documents/Dev/sharp-prov-toolbox/sample-data/taverna.prov.ttl#taverna-prov-export", "target" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_111.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "Z138_ATGCCTAA_L006_R1_004.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#4cad7bb971256547", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "target" : "http://fr.symetric#9dc1dd64e02bb035", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "target" : "Processor execution SnpEff", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/process/b538bed6-d9be-4d84-b8bd-902007a82d4b/", "target" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#32ce4966f32bd592", "target" : "http://fr.symetric#9e3da78118ff2007", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#32ce4966f32bd592", "target" : "http://fr.symetric#9030764ea8d5e704", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#32ce4966f32bd592", "target" : "http://fr.symetric#f601b5e70788878f", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#32ce4966f32bd592", "target" : "Map with BWA-MEM on data 5 and data 7 (mapped reads in BAM format)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#32ce4966f32bd592", "target" : "http://fr.symetric#32ce4966f32bd592", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_119.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "Z138_ATGCCTAA_L006_R2_005.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#849837c518091895", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#231ad2cb39e26fad", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#231ad2cb39e26fad", "target" : "Z138_ATGCCTAA_L006_R1_007.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#231ad2cb39e26fad", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_114.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "target" : "http://fr.symetric#9dc1dd64e02bb035", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "target" : "file:///Users/gaignard-a/Documents/Dev/sharp-prov-toolbox/sample-data/taverna.prov.ttl#taverna-prov-export", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "target" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "target" : "Workflow run of Workflow1", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://ns.taverna.org.uk/2011/run/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/", "target" : "http://ns.taverna.org.uk/2011/data/1e27f3ae-3b1f-4d86-bd52-16fe0c672a48/ref/0d73c9d3-66ad-4a9e-940f-326c93f3d001", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#be8b37b6be5ef8c0", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#be8b37b6be5ef8c0", "target" : "Z138_ATGCCTAA_L006_R1_001.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#be8b37b6be5ef8c0", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_108.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#673685fea1baf60a", "target" : "NA12891.R2.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#235c242fcfa290e0", "target" : "http://fr.symetric#20f38b0908fe3954", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#235c242fcfa290e0", "target" : "Sort on data 16", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#10a59efb7c60327e", "target" : "http://fr.symetric#673685fea1baf60a", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#10a59efb7c60327e", "target" : "NA12891.R1.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#10a59efb7c60327e", "target" : "http://fr.symetric#10a59efb7c60327e", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "PairedSamples", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#d2d1d8ad250776a6", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "NA12892", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8c5e0be0730e636", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#481a1bd8c4073bb3", "target" : "http://fr.symetric#93247a409271844d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#481a1bd8c4073bb3", "target" : "http://fr.symetric#235c242fcfa290e0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#481a1bd8c4073bb3", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#481a1bd8c4073bb3", "target" : "Sort on data 17", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#481a1bd8c4073bb3", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f88c7248ecce0238", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#f88c7248ecce0238", "target" : "Z138_ATGCCTAA_L006_R1_003.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#f88c7248ecce0238", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_110.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#47a65b9149410122", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#47a65b9149410122", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_118.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#47a65b9149410122", "target" : "Z138_ATGCCTAA_L006_R2_004.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#f601b5e70788878f", "target" : "NA12878.R1.ab.fastq", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "Z138_ATGCCTAA_L006_R2_003.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#fc9429d7adce4e2c", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_117.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#b8d0b4b9ba962ebc", "target" : "http://fr.symetric#235c242fcfa290e0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8d0b4b9ba962ebc", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#b8d0b4b9ba962ebc", "target" : "MPileup on data 21, data 20, and data 19", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#b8d0b4b9ba962ebc", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "Z138_ATGCCTAA_L006_R2_002.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_116.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#a66f369a31395018", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#GRCh37", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#GRCh37", "target" : "GRCh37", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#080c8290ba090d72", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#080c8290ba090d72", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#080c8290ba090d72", "target" : "MPileup on data 21, data 20, and data 19 (log)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#080c8290ba090d72", "target" : "http://fr.symetric#235c242fcfa290e0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#231ad2cb39e26fad", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#849837c518091895", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#5d25964795a51b38", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#47a65b9149410122", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#a66f369a31395018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#e0f10bec603285c8", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "NA12878.R1", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#4cad7bb971256547", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#f88c7248ecce0238", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e6135ea9cc8eb06c", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#f03769116286d120", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#be8b37b6be5ef8c0", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#GRCh37", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#70a8f3fea55a65e1", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#e119fc8b30c02e0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#fc9429d7adce4e2c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "/galaxy/prod-galaxy/galaxy/galaxy-files/galaxy-datasets/000/dataset_115.dat", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "Z138_ATGCCTAA_L006_R2_001.fastq.gz", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#e119fc8b30c02e0c", "target" : "http://fr.symetric#cf66897b71b0f768", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#35fa540f7da2222f", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#35fa540f7da2222f", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#35fa540f7da2222f", "target" : "MPileup on data 29, data 28, and data 21 (log)", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#35fa540f7da2222f", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#eff70b9c3fba5912", "target" : "http://fr.symetric#fb14bd0e6e67f98a", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#eff70b9c3fba5912", "target" : "http://fr.symetric#eff70b9c3fba5912", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#eff70b9c3fba5912", "target" : "http://fr.symetric#6434493324409c2d", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#eff70b9c3fba5912", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#eff70b9c3fba5912", "target" : "Sort on data 27", "label" : "http://www.w3.org/2000/01/rdf-schema#label"} , 
+ 	 {"source" : "http://fr.symetric#cf9ae75c5b84a076", "target" : "http://fr.symetric#cf9ae75c5b84a076", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf9ae75c5b84a076", "target" : "http://fr.symetric#12c6d0e45cbe9a0c", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf9ae75c5b84a076", "target" : "http://fr.symetric#481a1bd8c4073bb3", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf9ae75c5b84a076", "target" : "http://fr.symetric#0721a00306145018", "label" : "http://www.w3.org/ns/prov#wasInfluencedBy"} , 
+ 	 {"source" : "http://fr.symetric#cf9ae75c5b84a076", "target" : "Sort on data 18", "label" : "http://www.w3.org/2000/01/rdf-schema#label"}  
+ ] 
+} ;
+
+var svg = d3.select("svg");
+var width = svg.attr("width");
+var height = svg.attr("height");
+
+svg.attr("viewBox", "0 0 960 600")
+  .attr("width", "100%")
+  .attr("height", 600)
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .style("background-color", "#F4F2F5");
+
+svg = svg.call(d3.zoom().on("zoom", zoomed)).on("dblclick.zoom", null).append("g");
+
+
+svg.append("defs").append("marker")
+    .attr("id", "arrow")
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 20)
+    .attr("refY", 0)
+    .attr("markerWidth", 8)
+    .attr("markerHeight", 8)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().distance(80).id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+//d3.json("data.json", createGraph );
+
+function createGraph (error, graph) {
+  if (error) throw error;
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke", function(d) { return color(d.group); })
+      .attr("marker-end", "url(#arrow)");
+  
+   link.append("title")
+    .text(function (d) {
+        return d.label;
+      });
+
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 15)
+      .attr("fill", function(d) { if (d.root == "true") return color(d.root); return color(d.group); })
+      .on('dblclick', releasenode)
+      // .on("mouseover", fade(.1))
+      // .on("mouseout", fade(1))
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+var text = svg.append("g").attr("class", "labels").selectAll("g")
+    .data(graph.nodes).enter().append("g");
+
+text.append("text")
+    .attr("x", 0)
+    .attr("y", ".35em")
+    .attr("text-anchor", "middle")
+    .style("font-family", "sans-serif")
+    .style("font-size", "0.8em")
+    // .text(function(d) { return d.id; });
+    .text(function (d) {
+                var vName = "\"" + d.id.substring(2, d.id.length);
+//                console.log(vName);
+                if (d.group == 1) {
+                    return d.id;
+                }
+            });
+
+  node.on("click",function(d){
+//    console.log("clicked", d.id, "group:", d.group);
+  });
+
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+
+    text
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+  }
+}
+
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  // d.fx = null;
+  // d.fy = null;
+}
+
+function releasenode(d) {
+    d.fx = null;
+    d.fy = null;
+}
+
+function zoomed() {
+  svg.attr("transform", "translate(" + d3.event.transform.x + "," + d3.event.transform.y + ")" + " scale(" + d3.event.transform.k + ")");
+}
+
+createGraph(false, graph);
+
+</script>
