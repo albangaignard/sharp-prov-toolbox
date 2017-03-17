@@ -6,6 +6,7 @@
 package fr.cnrs.sharp.test;
 
 import fr.cnrs.sharp.Util;
+import fr.cnrs.sharp.reasoning.Harmonization;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -81,6 +82,9 @@ public class VisTest {
         InputStream stream = new ByteArrayInputStream(inputGraph.getBytes(StandardCharsets.UTF_8));
         RDFDataMgr.read(data, stream, Lang.TTL);
 
-        Util.writeHtmlViz(data);
+        Model res = Harmonization.harmonizeProv(data);
+        Util.dumpPredStats(res);
+        
+        Util.writeHtmlViz(res);
     }
 }
