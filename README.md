@@ -83,7 +83,7 @@ More details can be found in the [pom.xml](SharpProvToolbox/pom.xml) file.
 ## License
 MIT License
 
-Copyright (c) 2016 albangaignard
+Copyright (c) 2017 albangaignard
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
