@@ -6,6 +6,7 @@ package fr.cnrs.sharp;
  * and open the template in the editor.
  */
 import fr.cnrs.sharp.reasoning.Harmonization;
+import fr.cnrs.sharp.reasoning.Interlinking;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -43,18 +44,25 @@ public class Main {
         Option versionOpt = new Option("v", "version", false, "print the version information and exit");
         Option helpOpt = new Option("h", "help", false, "print the help");
 
-        Option inFileOpt = OptionBuilder.withArgName("input_file_1> ... <input_file_n")
-                .withLongOpt("input_files")
+        Option inProvFileOpt = OptionBuilder.withArgName("input_PROV_file_1> ... <input_PROV_file_n")
+                .withLongOpt("input_PROV_files")
                 .withDescription("The list of PROV input files, in RDF Turtle.")
                 .hasArgs()
                 .create("i");
+
+        Option inRawFileOpt = OptionBuilder.withArgName("input_raw_file_1> ... <input_raw_file_n")
+                .withLongOpt("input_raw_files")
+                .withDescription("The list of raw files to be fingerprinted and possibly interlinked with owl:sameAs.")
+                .hasArgs()
+                .create("ri");
 
         Option summaryOpt = OptionBuilder.withArgName("summary")
                 .withLongOpt("summary")
                 .withDescription("Materialization of wasInfluencedBy relations.")
                 .create("s");
 
-        options.addOption(inFileOpt);
+        options.addOption(inProvFileOpt);
+        options.addOption(inRawFileOpt);
         options.addOption(versionOpt);
         options.addOption(helpOpt);
         options.addOption(summaryOpt);
@@ -75,6 +83,28 @@ public class Main {
             if (cmd.hasOption("v")) {
                 logger.info("SharpTB version 0.1.0");
                 System.exit(0);
+            }
+
+            if (cmd.hasOption("ri")) {
+                String[] inFiles = cmd.getOptionValues("ri");
+                Model model = ModelFactory.createDefaultModel();
+                for (String inFile : inFiles) {
+                    Path p = Paths.get(inFile);
+                    if (!p.toFile().isFile()) {
+                        logger.error("Cannot find file " + inFile);
+                        System.exit(1);
+                    } else {
+                        //1. fingerprint
+                        try {
+                            model.add(Interlinking.fingerprint(p));
+                        } catch (IOException e) {
+                            logger.error("Cannot fingerprint file " + inFile);
+                        }
+                    }
+                }
+                //2. genSameAs
+                Model sameAs = Interlinking.generateSameAs(model);
+                sameAs.write(System.out, "TTL");
             }
 
             if (cmd.hasOption("i")) {
@@ -125,10 +155,10 @@ public class Main {
                     System.exit(1);
                 }
             } else {
-                logger.info("Please fill the -i input parameter.");
-                HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp("SharpTB", header, options, footer, true);
-                System.exit(0);
+//                logger.info("Please fill the -i input parameter.");
+//                HelpFormatter formatter = new HelpFormatter();
+//                formatter.printHelp("SharpTB", header, options, footer, true);
+//                System.exit(0);
             }
 
         } catch (ParseException ex) {
