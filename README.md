@@ -36,7 +36,11 @@ Or it can be used to interlink and harmonize cross workflow provenance traces, a
 
     java -jar SHARP-1.0-SNAPSHOT-launcher.jar -i sample-data/galaxy.prov.ttl sample-data/taverna.prov.ttl sample-data/sameas.ttl -s
     
-Finally, the `-s` option generates a visualization of the resulting provenance graph, based on inferred *prov:wasInfluencedBy* predicates. In the following screenshot, a workflow partly enacted on Galaxy and Taverna is depicted. While the left part of the graph, disconnected, represents hidden data from the user Galaxy history, the right part represents influence chain from an initial Galaxy bioinformatics worklfow to a Taverna post-processing workflow.  
+Finally, the `-s` option generates a visualization of the resulting provenance graph, based on inferred *prov:wasInfluencedBy* predicates. 
+
+Sample results are available in the [sample-results](sample-results) directory. 
+
+In the following screenshot, a workflow partly enacted on Galaxy and Taverna is depicted. While the left part of the graph, disconnected, represents hidden data from the user Galaxy history, the right part represents influence chain from an initial Galaxy bioinformatics worklfow to a Taverna post-processing workflow.  
 
 ![Harmonized provenance graphs](img/multi-site-PROV.png)
    
@@ -79,7 +83,7 @@ More details can be found in the [pom.xml](SharpProvToolbox/pom.xml) file.
 ## License
 MIT License
 
-Copyright (c) 2016 albangaignard
+Copyright (c) 2017 albangaignard
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
